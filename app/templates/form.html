@@ -1,35 +1,73 @@
     <!DOCTYPE html>
+
     <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <title>Formulário</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style type="text/css">
+            h11 {
+        color:red;
+    }
+
+    #logo {
+            width:50%;
+            height:50%;
+    }
+
+    .panel-heading{
+        font-size:150%;
+    }
+    </style>
     </head>
     <body>
-        <div class="col-8 m-auto pt-2 pb-2 text-center">
-            <h1>Cadastro do Cliente</h1>
-        </div>
 
-        <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="/" class="btn btn-info">Voltar</a>
-        </div>
 
         <div class="col-8 m-auto pt-4 pb-2 text-center">
             <div id="result"></div>
         </div>
 
-        <div class="col-8 m-auto pt-4 pb-2 text-center">
+         <div class="col-8 m-auto pt-4 pb-2">
          <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post" >
              {%  csrf_token %}
-             <div class="form-group mt-4">Nome: {{form.Nome}} </div>
-             <div class="form-group mt-4">Brinde: {{form.Brinde}} </div>
-             <div class="form-group mt-4">Sala: {{form.Sala}} </div>
-             <input type="submit" class="btn btn-success mt-4" value="Salvar">
-         </form>
 
+             <div class="form-group mt-8 text-center">Nome: {{form.Nome}} </div>
+             <div class="form-group mt-4 text-center">Brinde: {{form.Brinde}} </div>
+             <div class="form-group mt-4 text-center">Sala: {{form.Sala}} </div>
+             <div class="text-end">
+                <button id="Cancelar" name="Cancelar" class="btn btn-danger mt-4" type="Reset" onclick="window.location.href = '/'" >Cancelar</button>
+                <input type="submit" class="btn btn-success mt-4" value="Salvar">
+             </div>
+         </form>
         </div>
+
+
+
+    <!-- Button (Double)
+    <div class="form-group text-end">
+      <label class="col-md-2 control-label" for="Cadastrar"></label>
+      <div class="col-md-8">
+        <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset" onclick="window.location.href = '/'" >Cancelar</button>
+        <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit" value="Salvar">Cadastrar</button>
+        <input type="submit" class="btn btn-success mt-4" value="Salvar">
+      </div>
+    </div>-->
+
+    </div>
+    </div>
+
+
+    </fieldset>
+    </form>
+
         {%  load static %}
         <script src="{% static 'javascript.js' %}"></script>
+
+
 
     </body>
 

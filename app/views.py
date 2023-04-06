@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from app.forms import ClienteForm
 from app.models import Cliente
+
 #from django.core.paginator import Paginator
 
+from .forms import GeeksForm
 
 # Create your views here.
 
@@ -65,3 +67,8 @@ def brinde(request, pk):
     data = {}
     data['db'] = Cliente.objects.get(pk=pk)
     return render(request, 'brindexxx.html', data)
+
+
+
+
+
