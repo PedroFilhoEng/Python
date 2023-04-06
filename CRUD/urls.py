@@ -28,5 +28,4 @@ urlpatterns = [
     path('update/<int:pk>/', update, name='update'),
     path('delete/<int:pk>/', delete, name='delete'),
     path('brinde/<int:pk>/', brinde, name='brinde'),
-
 ]
