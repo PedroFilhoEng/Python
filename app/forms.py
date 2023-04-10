@@ -16,7 +16,7 @@ GEEKS_CHOICES =(
     ("5", "CN - CATEDRAL"),
     ("6", "BT - LAGHETTO VIVERONE"),
 )
-class GeeksForm(forms.Form):
+class GEEKS_CHOICES(forms.Form):
     geeks_field = forms.ChoiceField(choices = GEEKS_CHOICES)
 
 
