@@ -75,29 +75,29 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 #configuração banco local
-#DATABASES = {
-#    'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'sistema',
-#        'PORT': '3306',
-#        'HOST': 'localhost',
-#        'USER': 'root',
-#        'PASSWORD': '',
-#    }
-#}
-
 DATABASES = {
     'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_3e6ce0324a40fdc',
+        'NAME': 'sistema',
         'PORT': '3306',
-        'HOST': 'us-cdbr-east-06.cleardb.net',
-        'USER': 'b9e59c2ab88d15',
-        'PASSWORD': 'a7ddfaed',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': '',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'heroku_3e6ce0324a40fdc',
+#        'PORT': '3306',
+#        'HOST': 'us-cdbr-east-06.cleardb.net',
+#        'USER': 'b9e59c2ab88d15',
+#        'PASSWORD': 'a7ddfaed',
+#    }
+#}
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

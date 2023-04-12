@@ -1,5 +1,6 @@
-import self as self
 from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.contrib.contenttypes.models import ContentType
 
 class Cliente(models.Model):
     SALA_CHOICES = [
@@ -59,6 +60,12 @@ class Cliente(models.Model):
     Brinde = models.CharField(max_length=54, choices=BRINDE_CHOICES)
     Sala = models.CharField(max_length=150,choices=SALA_CHOICES)
     Tempo = models.DateField(auto_now_add=True)
+
+
+    def has_perm(self, user_obj, perm, obj=None):
+        if perm == 'app.delete_cliente_custom':  # Use 'delete_cliente_custom' em vez de 'delete_cliente'
+            return user_obj.groups.filter(name='Funcionario').exists()
+        return super().has_perm(user_obj, perm, obj=obj)
 
     def tempo_formatado(self):
         return self.Tempo.strftime('%d/%m/%Y')

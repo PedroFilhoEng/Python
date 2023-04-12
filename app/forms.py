@@ -20,6 +20,3 @@ class GEEKS_CHOICES(forms.Form):
     geeks_field = forms.ChoiceField(choices = GEEKS_CHOICES)
 
 
-
-
-

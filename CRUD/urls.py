@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 
 from app.views import home, form, create, view, edit, update, delete, brinde,\
-    create2, store, painel, dologin,  dashboard, index
+    create2, store, painel, dologin,  dashboard, index, exc
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,5 +20,6 @@ urlpatterns = [
     path('dologin/', dologin),
     path('dashboard/', dashboard),
     path('index/', index, name='index'),
+    path('accounts/login/', exc, name='exc'),
 
 ]
