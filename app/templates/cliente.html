@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ cliente.nome }}</h1>
+<p>Email: {{ cliente.email }}</p>
+<p>Telefone: {{ cliente.telefone }}</p>
+
+<div class="form-group">
+    <label for="Brinde">Brinde</label>
+    <select class="form-control" id="Brinde" name="Brinde">
+        {% for Brinde in form.Brinde %}
+        <option>{{ Brinde }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<form method="post" action="{% url 'atualizar_cliente' cliente.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+    <a href="{% url 'excluir_cliente' cliente.id %}" class="btn btn-danger">Excluir</a>
+    <a href="{% url 'novo_brinde' cliente.id %}" class="btn btn-success">Novo Brinde</a>
+</form>
+
+{% endblock %}

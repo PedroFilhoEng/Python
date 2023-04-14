@@ -8,6 +8,7 @@ class ClienteForm(ModelForm):
             fields = ['Nome', 'Brinde', 'Sala']
 
 
+
 GEEKS_CHOICES =(
     ("1", "GM - PEDRAS ALTAS"),
     ("2", "GM - STILO BORGES"),
@@ -16,8 +17,8 @@ GEEKS_CHOICES =(
     ("5", "CN - CATEDRAL"),
     ("6", "BT - LAGHETTO VIVERONE"),
 )
-class GeeksForm(forms.Form):
-    geeks_field = forms.ChoiceField(choices = GEEKS_CHOICES)
+class GeeksChoicesForm(forms.Form):
+    geeks_field = forms.ChoiceField(choices=GEEKS_CHOICES)
 
 
 
