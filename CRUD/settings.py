@@ -85,7 +85,8 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 #        'USER': 'root',
 #        'PASSWORD': '',
 #    }
-}DATABASES = {
+#}
+DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': BASE_DIR / 'db.sqlite3',
@@ -97,7 +98,7 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
         'PASSWORD': '9caa2eb2',
     }
 }
-mysql://:@/?reconnect=true
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
