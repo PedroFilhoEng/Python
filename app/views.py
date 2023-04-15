@@ -1,43 +1,43 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-
 from app.forms import ClienteForm
 from .models import Cliente
-
-
 from django.core.paginator import Paginator
+from django.http import JsonResponse
 
-# Create your views here.
 
 def home(request):
     return render(request, 'home.html')
 
+
 def index(request):
     data = {}
-    #search = request.GET.get('search')
-    all = Cliente.objects.order_by('-id')
-    paginator = Paginator(all, 8)
-    pages = request.GET.get('page')
-    data['db'] = paginator.get_page(pages)
-    #if search:
-    #    data['db'] = Cliente.objects.filter(Nome__icontains=search)
-    #else:
-    #    data['db'] = Cliente.objects.all()
-#     data['db'] = Cliente.objects.all()
+    search = request.GET.get('search')
+
+    if search:
+        data['db'] = Cliente.objects.filter(Nome__icontains=search)
+    else:
+        #        data['db'] = Cliente.objects.all()
+        #        data['db'] = Cliente.objects.all()
+        all = Cliente.objects.order_by('-id')
+        paginator = Paginator(all, 8)
+        pages = request.GET.get('page')
+        data['db'] = paginator.get_page(pages)
     return render(request, 'index.html', data)
 
+
 def form(request):
-    data = {}
-    data['form'] = ClienteForm()
+    data = {'form': ClienteForm()}
     return render(request, 'form.html', data)
 
 
-#def create(request):
+# def create(request):
 #    form = ClienteForm(request.POST or None)
 #    if form.is_valid():
 #        form.save()
 #        return redirect('home')
+# noinspection PyShadowingNames
 def create(request):
     data = {}
     form = ClienteForm(request.POST or None)
@@ -51,22 +51,21 @@ def create(request):
         data['form'] = ClienteForm()
     return render(request, 'form.html', data)
 
+
 def view(request, pk):
-    data = {}
-    data['db'] = Cliente.objects.get(pk=pk)
+    data = {'db': Cliente.objects.get(pk=pk)}
     return render(request, 'view.html', data)
 
 
 def edit(request, pk):
-    data = {}
-    data['db'] = Cliente.objects.get(pk=pk)
+    data = {'db': Cliente.objects.get(pk=pk)}
     data['form'] = ClienteForm(instance=data['db'])
     return render(request, 'form.html', data)
 
 
+# noinspection PyShadowingNames
 def update(request, pk):
-    data = {}
-    data['db'] = Cliente.objects.get(pk=pk)
+    data = {'db': Cliente.objects.get(pk=pk)}
     form = ClienteForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
@@ -80,8 +79,7 @@ def delete(request, pk):
 
 
 def brinde(request, pk):
-    data = {}
-    data['db'] = Cliente.objects.get(pk=pk)
+    data = {'db': Cliente.objects.get(pk=pk)}
     return render(request, 'brindexxx.html', data)
 
 
@@ -120,19 +118,17 @@ def dologin(request):
         data['class'] = 'alert-danger'
         return render(request, 'home.html', data)
 
+
 def dashboard(request):
     return render(request, 'home.html')
 
 
-from django.http import JsonResponse
-
+# noinspection PyShadowingNames
 def add_brinde(request):
     if request.method == 'POST':
-        Brinde = request.POST.get('Brinde')
+        brinde = request.POST.get('brinde')
         if brinde:
             # Salva o novo brinde no banco de dados
-            novo_brinde = Brinde.objects.create(nome=Brinde)
+            novo_brinde = brinde.objects.create(nome=brinde)
             return JsonResponse({'id': novo_brinde.id, 'nome': novo_brinde.nome})
     return JsonResponse({'error': 'Dados inválidos'})
-
-

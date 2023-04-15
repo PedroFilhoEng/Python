@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-p+(uka@(p(04l)tc+99#rukr5)-)532o=50-lznrb3br*s37w#
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -71,14 +70,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'CRUD.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
-#        #'ENGINE': 'django.db.backends.sqlite3',
-#        #'NAME': BASE_DIR / 'db.sqlite3',
+#        # 'ENGINE': 'django.db.backends.sqlite3',
+#        # 'NAME': BASE_DIR / 'db.sqlite3',
 #        'ENGINE': 'django.db.backends.mysql',
 #        'NAME': 'sistema',
 #        'PORT': '3306',
@@ -86,18 +84,18 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 #        'USER': 'root',
 #        'PASSWORD': '',
 #    }
-#}
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_3fccf10f7a69a00',
+        'NAME': 'sistema',
         'PORT': '3306',
-        'HOST': 'us-cdbr-east-06.cleardb.net',
-        'USER': 'b595ef5015af25',
-        'PASSWORD': '5a5a755c',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': '',
     }
 }
-#mysql://b595ef5015af25:5a5a755c@us-cdbr-east-06.cleardb.net/heroku_3fccf10f7a69a00?reconnect=true
+# mysql://b595ef5015af25:5a5a755c@us-cdbr-east-06.cleardb.net/heroku_3fccf10f7a69a00?reconnect=true
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -116,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -138,6 +135,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 django_heroku.settings(locals())
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-
-
-

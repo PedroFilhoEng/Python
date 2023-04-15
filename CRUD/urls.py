@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from app.views import home, form, create, view, edit, update, delete, brinde,create2, store, painel, dologin,  dashboard, index, add_brinde
+from app.views import home, form, create, view, edit, update, delete, brinde,create2, store, painel, dologin,  dashboard, index
 
 
 urlpatterns = [
