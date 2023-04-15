@@ -7,13 +7,40 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-bNhgnJHThy7V94c1sEuc7sK91Wo8ZUaJZYZ6wZK6E3q6D50pPzJMrKj+U1I9Xj8fn+vgIS+sZY+hRlBbLHTJ+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <style>
+            .center {
+              text-align: center;
+            }
+
+            .pagination {
+              display: inline-block;
+            }
+
+            .pagination a {
+              color: black;
+              float: left;
+              padding: 8px 16px;
+              text-decoration: none;
+              transition: background-color .3s;
+              border: 1px solid #ddd;
+              margin: 0 4px;
+            }
+
+            .pagination a.active {
+              background-color: #4CAF50;
+              color: white;
+              border: 1px solid #4CAF50;
+            }
+
+            .pagination a:hover:not(.active) {background-color: #ddd;}
+            </style>
      </head>
      <body>
 
      <div class="container bg-primary col-md-12 mt-4 pb-2">
       <div class="row">
         <div class="col-md-6 text-start pt-3">
-         <a class="navbar-brand text-white " href="/index"><h1><i class='fas fa-gift'></i>  Controle de Brindes  </h1></a>
+         <a class="navbar-brand text-white " href="/index"><h1><!--<i class='fas fa-gift'></i>-->  Controle de Brindes  </h1></a>
         </div>
 
 
@@ -21,7 +48,7 @@
       <div class="col-md-6 pt-4 text-end">
           <form class="form-inline">
               <label for="search"><input type="text" id="search" name="search" class="form-control" placeholder="Digite o nome do cliente..." ></label>
-              <button class="btn btn-success" type="submit"><i class='fas fa-search'></i>  Pesquisar</button>
+              <button class="btn btn-success" type="submit"><!--<i class='fas fa-search'></i>-->  Pesquisar</button>
           </form>
         </div>
       </div>
@@ -45,15 +72,16 @@
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col"><i class='fas fa-user-alt'></i>  Nome</th>
-                        <th scope="col"><i class='far fa-calendar-alt'></i>  Data</th>
-                        <th scope="col"><i class='fas fa-gift'></i> Brinde</th>
-                        <th scope="col"><i class='fas fa-home'></i>   Sala</th>
-                        <th class="col text-center"><i class="fa fa-gear fa-spin" style="font-size:24px"></i>   Opções</th>
+                        <th scope="col"><!--<i class='fas fa-user-alt'></i>-->  Nome</th>
+                        <th scope="col"><!--<i class='far fa-calendar-alt'></i>-->   Data</th>
+                        <th scope="col"><!--<i class='fas fa-gift'></i>-->  Brinde</th>
+                        <th scope="col"><!--<i class='fas fa-home'></i>-->    Sala</th>
+                        <th class="col text-center"><!--<i class="fa fa-gear fa-spin" style="font-size:24px"></i>-->    Opções</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for dbs in db %}
+
                         <tr>
                             <th>{{dbs.id}}</th>
                             <td>{{dbs.Nome}}</td>
@@ -67,6 +95,8 @@
                                 <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel" title="Deletar Cadastro do Cliente"><i class='far fa-trash-alt'></i>   Deletar</a>-->
                             </td>
                         </tr>
+
+
                     {% endfor %}
                     </tbody>
                 </table>
@@ -74,27 +104,34 @@
         </div>
     </div>
 
-
 <!--
-<div class="container-xl text-end">
-	<div class="table-responsive">
-		<div class="table-wrapper">
-            <div class="clearfix">
-				<div class="hint-text">Mostrando  <b>5</b> de <b>25</b> entradas</div>
-				<ul class="pagination">
-					<li class="page-item"><a href="#">Previous</a></li>
-					<li class="page-item"><a href="#" class="page-link">1</a></li>
-					<li class="page-item"><a href="#" class="page-link">2</a></li>
-					<li class="page-item active"><a href="#" class="page-link">3</a></li>
-					<li class="page-item"><a href="#" class="page-link">4</a></li>
-					<li class="page-item"><a href="#" class="page-link">5</a></li>
-					<li class="page-item"><a href="#" class="page-link">Next</a></li>
-				</ul>
-			</div>
-        </div>
-    </div>
+    <div class="pagination text-center pt-4 pb-4">
+        {% if db.has_previous %}
+            <a href="?page={{ db.previous_page_number }}"> < </a>
+        {% endif %}
+        {{db.number }}
+        {% if db.has_next %}
+            <a href="?page={{ db.next_page_number }}"> > </a>
+        {% endif %}
+    </div>-->
+
+     <div class="center">
+  <div class="pagination">
+   {% if db.has_previous %}
+            <a href="?page={{ db.previous_page_number }}">&laquo;</a>
+   {% endif %}
+  <a href="?page=1">1</a>
+  <a href="?page=2">2</a>
+  <a href="?page=3">3</a>
+  <a href="?page=4">4</a>
+  <a href="?page=5">5</a>
+  <a href="?page=6">6</a>
+  <!--<a href="#" class="active">2</a>-->
+  {% if db.has_next %}
+            <a href="?page={{ db.next_page_number }}">&raquo;</a>
+  {% endif %}
+  </div>
 </div>
- -->
 
 
       <div class="container">
@@ -116,5 +153,7 @@
         <script src="{% static 'javascript.js' %}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
      </body>
     </html>

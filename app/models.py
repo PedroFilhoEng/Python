@@ -8,6 +8,7 @@ class Cliente(models.Model):
         ('GRAMADO - NBA', 'GRAMADO - NBA'),
         ('CANELA - VIVERONE', 'CANELA - VIVERONE'),
         ('CANELA - CATEDRAL', 'CANELA - CATEDRAL'),
+        ('GRAMADO - SIENA', 'GRAMADO - SIENA'),
         ('BENTO GONÇALVES - VIVERONE', 'BENTO GONÇALVES - VIVERONE'),
     ]
     BRINDE_CHOICES = [
@@ -58,7 +59,6 @@ class Cliente(models.Model):
     Brinde = models.CharField(max_length=54, choices=BRINDE_CHOICES)
     Sala = models.CharField(max_length=150,choices=SALA_CHOICES)
     Tempo = models.DateField(auto_now_add=True)
-
     def tempo_formatado(self):
         return self.Tempo.strftime('%d/%m/%Y')
 

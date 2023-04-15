@@ -49,7 +49,9 @@
                     <option>{{ Brinde }}</option>
                     {% endfor %}
                 </select>
-            </div>
+         </div>
+
+
             <div class="text-end">
                 <button id="Cancelar" name="Cancelar" class="btn btn-danger mt-4" type="Reset" onclick="window.location.href = '/index'">Cancelar</button>
                 <input type="submit" class="btn btn-success mt-4" value="Salvar">
@@ -60,10 +62,7 @@
 
 {% load static %}
 
-            <script src="{% static 'javascript.js' %}"></script>
-
-
-
+<script src="{% static 'javascript.js' %}"></script>
 
 </body>
 </html>
