@@ -88,14 +88,14 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sistema',
+        'NAME': 'heroku_5dc123aac7e3811',
         'PORT': '3306',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': '',
+        'HOST': 'us-cdbr-east-06.cleardb.net',
+        'USER': 'bd5ad0c62e3d8e',
+        'PASSWORD': 'e2a69e04',
     }
 }
-# mysql://b595ef5015af25:5a5a755c@us-cdbr-east-06.cleardb.net/heroku_3fccf10f7a69a00?reconnect=true
+#mysql://:@/?reconnect=true
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
