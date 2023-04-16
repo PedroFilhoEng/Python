@@ -11,6 +11,72 @@
         <label for="username"></label><input class="form-control mt-4" type="text" name="username" id="username" placeholder="Digite seu Login:">
         <label for="password"></label><input class="form-control mt-4" type="password" name="password" id="password" placeholder="Digite a Senha :">
         <input class="btn btn-dark mt-4 text-end" type="submit" value="Entrar">
+
+<!--
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col"> Nome</th>
+                        <th scope="col">   Data</th>
+                        <th scope="col"> Brinde</th>
+                        <th scope="col"> Sala</th>
+                        <th class="col text-center">   Opções</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for dbs in db %}
+
+                        <tr>
+                            <th>{{dbs.id}}</th>
+                            <td>{{dbs.Nome}}</td>
+                            <td>{{dbs.tempo_formatado}}</td>
+                            <td>{{dbs.Brinde}}</td>
+                            <td>{{dbs.Sala}}</td>
+                            <td class="text-center">
+                                <a href="/view/{{dbs.id}}/" class="btn btn-dark" title="Visualizar Cadastro do Cliente">  Visualizar</a>
+                                <a href="/brinde/{{dbs.id}}/" class="btn btn-success" title="Imprimir Brinde" target="_blank">Imprimir</a>
+
+                                <a href="/edit/{{dbs.id}}/" class="btn btn-primary" title="Editar Cadastro do Cliente"><i class='fas fa-user-edit'></i>   Editar</a>
+                                <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel" title="Deletar Cadastro do Cliente"><i class='far fa-trash-alt'></i>   Deletar</a>
+                            </td>
+                        </tr>
+
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+-->
+
+<!--
+     <div class="center">
+  <div class="pagination">
+   {% if db.has_previous %}
+            <a href="?page={{ db.previous_page_number }}">&laquo;</a>
+   {% endif %}
+  <a href="?page=1">1</a>
+  <a href="?page=2">2</a>
+  <a href="?page=3">3</a>
+  <a href="?page=4">4</a>
+  <a href="?page=5">5</a>
+  <a href="?page=6">6</a>
+  ##<a href="#" class="active">2</a>
+  {% if db.has_next %}
+            <a href="?page={{ db.next_page_number }}">&raquo;</a>
+  {% endif %}
+  </div>
+</div>
+-->
+
+
+
     </div>
 </form>
 {% endblock %}

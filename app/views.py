@@ -1,13 +1,13 @@
-#from django.contrib.auth import authenticate, login
+# from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from app.forms import ClienteForm
 from .models import Cliente
-#from django.core.paginator import Paginator
+# from django.core.paginator import Paginator
 from django.http import JsonResponse
 
 
-#def home(request):
+# def home(request):
 #    return render(request, 'home.html')
 
 
@@ -19,7 +19,7 @@ def home(request):
         data['db'] = Cliente.objects.filter(Nome__icontains=search)
     else:
         #        data['db'] = Cliente.objects.all()
-                data['db'] = Cliente.objects.order_by('-id')
+        data['db'] = Cliente.objects.order_by('-id')
 #        all = Cliente.objects.order_by('-id')
 #        paginator = Paginator(all, 8)
 #        pages = request.GET.get('page')
@@ -103,11 +103,11 @@ def store(request):
     return render(request, 'create2.html', data)
 
 
-#def painel(request):
+# def painel(request):
 #    return render(request, 'home.html')
 
 
-#def dologin(request):
+# def dologin(request):
 #    data = {}
 #    user = authenticate(username=request.POST['username'], password=request.POST['password'])
 #    if user is not None:
@@ -119,7 +119,7 @@ def store(request):
 #        return render(request, 'home.html', data)
 
 
-#def dashboard(request):
+# def dashboard(request):
 #    return render(request, 'home.html')
 
 
