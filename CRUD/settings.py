@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
+#DATABASES = {
 #    'default': {
 #        # 'ENGINE': 'django.db.backends.sqlite3',
 #        # 'NAME': BASE_DIR / 'db.sqlite3',
@@ -88,14 +88,14 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_5dc123aac7e3811',
+        'NAME': 'heroku_ef72d4ba880d2ff',
         'PORT': '3306',
         'HOST': 'us-cdbr-east-06.cleardb.net',
-        'USER': 'bd5ad0c62e3d8e',
-        'PASSWORD': 'e2a69e04',
+        'USER': 'b2e417277275cb',
+        'PASSWORD': '59717b3c',
     }
 }
-#mysql://:@/?reconnect=true
+# mysql://b2e417277275cb:59717b3c@us-cdbr-east-06.cleardb.net/heroku_ef72d4ba880d2ff?reconnect=true
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

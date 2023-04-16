@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from app.forms import ClienteForm
 from .models import Cliente
-from django.core.paginator import Paginator
+#from django.core.paginator import Paginator
 from django.http import JsonResponse
 
 
@@ -19,11 +19,11 @@ def home(request):
         data['db'] = Cliente.objects.filter(Nome__icontains=search)
     else:
         #        data['db'] = Cliente.objects.all()
-        #        data['db'] = Cliente.objects.all()
-        all = Cliente.objects.order_by('-id')
-        paginator = Paginator(all, 8)
-        pages = request.GET.get('page')
-        data['db'] = paginator.get_page(pages)
+                data['db'] = Cliente.objects.order_by('-id')
+#        all = Cliente.objects.order_by('-id')
+#        paginator = Paginator(all, 8)
+#        pages = request.GET.get('page')
+#        data['db'] = paginator.get_page(pages)
     return render(request, 'index.html', data)
 
 
