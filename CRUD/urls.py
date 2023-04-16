@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.urls import path
 
-from app.views import home, form, create, view, edit, update, delete, brinde,create2, store, painel,  dashboard, index#, dologin
+from app.views import home, form, create, view, edit, update, delete, brinde,create2, store#, painel,  dashboard, index, dologin
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home'),
+    path('/', home, name='home'),
     path('form/', form, name='form'),
     path('create/', create, name='create'),
     path('view/<int:pk>/', view, name='view'),
@@ -16,8 +16,8 @@ urlpatterns = [
     path('brinde/<int:pk>/', brinde, name='brinde'),
     path('create2/', create2),
     path('store/', store),
-    path('painel/', painel),
+#    path('painel/', painel),
 #    path('dologin/', dologin),
-    path('dashboard/', dashboard),
+#    path('dashboard/', dashboard),
 #    path('index/', index, name='index'),
 ]

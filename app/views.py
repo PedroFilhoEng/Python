@@ -24,7 +24,7 @@ def home(request):
         paginator = Paginator(all, 8)
         pages = request.GET.get('page')
         data['db'] = paginator.get_page(pages)
-    return render(request, 'index.html', data)
+    return render(request, '/', data)
 
 
 def form(request):
@@ -103,8 +103,8 @@ def store(request):
     return render(request, 'create2.html', data)
 
 
-def painel(request):
-    return render(request, 'home.html')
+#def painel(request):
+#    return render(request, 'home.html')
 
 
 #def dologin(request):
@@ -119,8 +119,8 @@ def painel(request):
 #        return render(request, 'home.html', data)
 
 
-def dashboard(request):
-    return render(request, 'home.html')
+#def dashboard(request):
+#    return render(request, 'home.html')
 
 
 # noinspection PyShadowingNames
