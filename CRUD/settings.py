@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 #        'USER': 'root',
 #        'PASSWORD': '',
 #    }
-# }
+# } heroku run python manage.py migrate --settings=your_project_name.settings.prod
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
