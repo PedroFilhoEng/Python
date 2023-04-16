@@ -76,7 +76,7 @@ def update(request, pk):
 def delete(request, pk):
     db = Cliente.objects.get(pk=pk)
     db.delete()
-    return redirect('index')
+    return redirect('/')
 
 
 def brinde(request, pk):
