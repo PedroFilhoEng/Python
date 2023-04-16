@@ -24,7 +24,7 @@ def home(request):
         paginator = Paginator(all, 8)
         pages = request.GET.get('page')
         data['db'] = paginator.get_page(pages)
-    return render(request, '/', data)
+    return render(request, 'index.html', data)
 
 
 def form(request):
