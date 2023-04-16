@@ -64,24 +64,70 @@
        </div>
     </div>
 
+
+
+
+
+     <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col"> Nome</th>
+                        <th scope="col">   Data</th>
+                        <th scope="col"> Brinde</th>
+                        <th scope="col"> Sala</th>
+                        <th class="col text-center">   Opções</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                        <tr>
+                            <th>{{db.id}}</th>
+                            <td>{{db.Nome}}</td>
+                            <td>{{db.tempo_formatado}}</td>
+                            <td>{{db.Brinde}}</td>
+                            <td>{{db.Sala}}</td>
+                            <td class="text-center">
+                                <a href="/view/{{db.id}}/" class="btn btn-dark" title="Visualizar Cadastro do Cliente">  Visualizar</a>
+                                <a href="/brinde/{{db.id}}/" class="btn btn-success" title="Imprimir Brinde" target="_blank">Imprimir</a>
+                            </td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
      <div class="center">
-  <div class="pagination">
-   {% if db.has_previous %}
-            <a href="?page={{ db.previous_page_number }}">&laquo;</a>
-   {% endif %}
-  <a href="?page=1">1</a>
-  <a href="?page=2">2</a>
-  <a href="?page=3">3</a>
-  <a href="?page=4">4</a>
-  <a href="?page=5">5</a>
-  <a href="?page=6">6</a>
-  ##<a href="#" class="active">2</a>
-  {% if db.has_next %}
-            <a href="?page={{ db.next_page_number }}">&raquo;</a>
-  {% endif %}
-  </div>
-</div>
--->
+          <div class="pagination">
+           {% if db.has_previous %}
+                    <a href="?page={{ db.previous_page_number }}">&laquo;</a>
+           {% endif %}
+          <a href="?page=1">1</a>
+          <a href="?page=2">2</a>
+          <a href="?page=3">3</a>
+          <a href="?page=4">4</a>
+          <a href="?page=5">5</a>
+          <a href="?page=6">6</a>
+         <!--<a href="#" class="active">2</a>-->
+          {% if db.has_next %}
+                    <a href="?page={{ db.next_page_number }}">&raquo;</a>
+          {% endif %}
+          </div>
+    </div>
+
 
       <div class="container">
        <div class="table-responsive text-center pt-4 pb-4">
