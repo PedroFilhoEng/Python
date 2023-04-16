@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-bNhgnJHThy7V94c1sEuc7sK91Wo8ZUaJZYZ6wZK6E3q6D50pPzJMrKj+U1I9Xj8fn+vgIS+sZY+hRlBbLHTJ+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- <style>
+         <style>
             .center {
               text-align: center;
             }
@@ -27,7 +27,7 @@
             }
 
 
-            </style>-->
+            </style>
      </head>
      <body>
 
@@ -57,6 +57,68 @@
        </div>
     </div>
 
+<!--
+
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col"> Nome</th>
+                        <th scope="col">   Data</th>
+                        <th scope="col"> Brinde</th>
+                        <th scope="col"> Sala</th>
+                        <th class="col text-center">   Opções</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for dbs in db %}
+
+                        <tr>
+                            <th>{{dbs.id}}</th>
+                            <td>{{dbs.Nome}}</td>
+                            <td>{{dbs.tempo_formatado}}</td>
+                            <td>{{dbs.Brinde}}</td>
+                            <td>{{dbs.Sala}}</td>
+                            <td class="text-center">
+                                <a href="/view/{{dbs.id}}/" class="btn btn-dark" title="Visualizar Cadastro do Cliente">  Visualizar</a>
+                                <a href="/brinde/{{dbs.id}}/" class="btn btn-success" title="Imprimir Brinde" target="_blank">Imprimir</a>
+
+                                <a href="/edit/{{dbs.id}}/" class="btn btn-primary" title="Editar Cadastro do Cliente"><i class='fas fa-user-edit'></i>   Editar</a>
+                                <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel" title="Deletar Cadastro do Cliente"><i class='far fa-trash-alt'></i>   Deletar</a>
+                            </td>
+                        </tr>
+
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+-->
+
+
+     <div class="center">
+  <div class="pagination">
+   {% if db.has_previous %}
+            <a href="?page={{ db.previous_page_number }}">&laquo;</a>
+   {% endif %}
+  <a href="?page=1">1</a>
+  <a href="?page=2">2</a>
+  <a href="?page=3">3</a>
+  <a href="?page=4">4</a>
+  <a href="?page=5">5</a>
+  <a href="?page=6">6</a>
+  ##<a href="#" class="active">2</a>
+  {% if db.has_next %}
+            <a href="?page={{ db.next_page_number }}">&raquo;</a>
+  {% endif %}
+  </div>
+</div>
+-->
 
       <div class="container">
        <div class="table-responsive text-center pt-4 pb-4">
@@ -65,26 +127,18 @@
        </div>
     </div>
 
-
-
-
-   <!--a href="/painel/">Login</a>
-    {% block content %}
-    <a href="/create2/">Cadastro de usuários</a>
-    {% endblock %}-->
-
         {%  load static %}
         <script src="{% static 'javascript.js' %}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-<!--.pagination a.active {
+            .pagination a.active {
               background-color: #4CAF50;
               color: white;
               border: 1px solid #4CAF50;
-            }-->
+            }
 
-            <!--.pagination a:hover:not(.active) {background-color: #ddd;}-->
+            .pagination a:hover:not(.active) {background-color: #ddd;}
 
 
      </body>
