@@ -2,12 +2,12 @@ from django.db import models
 
 class Cliente(models.Model):
     SALA_CHOICES = [
-        ('GRAMADO - PEDRAS ALTAS', 'GRAMADO - PEDRAS ALTAS'),
-        ('GRAMADO - STILO', 'GRAMADO - STILO'),
+#        ('GRAMADO - PEDRAS ALTAS', 'GRAMADO - PEDRAS ALTAS'),
+#        ('GRAMADO - STILO', 'GRAMADO - STILO'),
         ('GRAMADO - GOLDEN', 'GRAMADO - GOLDEN'),
-        ('GRAMADO - NBA', 'GRAMADO - NBA'),
+#        ('GRAMADO - NBA', 'GRAMADO - NBA'),
         ('CANELA - VIVERONE', 'CANELA - VIVERONE'),
-        ('CANELA - CATEDRAL', 'CANELA - CATEDRAL'),
+#        ('CANELA - CATEDRAL', 'CANELA - CATEDRAL'),
         ('GRAMADO - SIENA', 'GRAMADO - SIENA'),
         ('BENTO GONÇALVES - VIVERONE', 'BENTO GONÇALVES - VIVERONE'),
     ]

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-bNhgnJHThy7V94c1sEuc7sK91Wo8ZUaJZYZ6wZK6E3q6D50pPzJMrKj+U1I9Xj8fn+vgIS+sZY+hRlBbLHTJ+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
 <div class="container bg-primary col-md-12 mt-4 pb-2">
@@ -20,7 +21,7 @@
         </div>
         <div class="col-md-4"></div>
         <div class="col-md-1 text-center pt-4">
-            <a class="btn btn-danger" href="/" role="button">Voltar</a>
+            <a class="btn btn-danger" href="/index" role="button">Voltar</a>
         </div>
     </div>
 </div>
@@ -63,6 +64,18 @@
 {% load static %}
 
 <script src="{% static 'javascript.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#Brinde').select2();
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#Sala').select2();
+    });
+</script>
 
 </body>
 </html>

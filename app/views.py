@@ -3,8 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from app.forms import ClienteForm
 from .models import Cliente
-# from django.core.paginator import Paginator
-from django.http import JsonResponse
+from django.core.paginator import Paginator
 
 
 # def home(request):
@@ -18,12 +17,12 @@ def home(request):
     if search:
         data['db'] = Cliente.objects.filter(Nome__icontains=search)
     else:
-        #        data['db'] = Cliente.objects.all()
+#        data['db'] = Cliente.objects.all()
         data['db'] = Cliente.objects.order_by('-id')
-#        all = Cliente.objects.order_by('-id')
-#        paginator = Paginator(all, 8)
-#        pages = request.GET.get('page')
-#        data['db'] = paginator.get_page(pages)
+        all = Cliente.objects.order_by('-id')
+        paginator = Paginator(all, 8)
+        pages = request.GET.get('page')
+        data['db'] = paginator.get_page(pages)
     return render(request, 'index.html', data)
 
 
@@ -38,6 +37,7 @@ def form(request):
 #        form.save()
 #        return redirect('home')
 # noinspection PyShadowingNames
+
 def create(request):
     data = {}
     form = ClienteForm(request.POST or None)
@@ -50,6 +50,7 @@ def create(request):
     else:
         data['form'] = ClienteForm()
     return render(request, 'form.html', data)
+
 
 
 def view(request, pk):
@@ -124,11 +125,11 @@ def store(request):
 
 
 # noinspection PyShadowingNames
-def add_brinde(request):
-    if request.method == 'POST':
-        brinde = request.POST.get('brinde')
-        if brinde:
-            # Salva o novo brinde no banco de dados
-            novo_brinde = brinde.objects.create(nome=brinde)
-            return JsonResponse({'id': novo_brinde.id, 'nome': novo_brinde.nome})
-    return JsonResponse({'error': 'Dados inválidos'})
+#def add_brinde(request):
+#    if request.method == 'POST':
+#        brinde = request.POST.get('brinde')
+#        if brinde:
+#            # Salva o novo brinde no banco de dados
+#            novo_brinde = brinde.objects.create(nome=brinde)
+#            return JsonResponse({'id': novo_brinde.id, 'nome': novo_brinde.nome})
+#    return JsonResponse({'error': 'Dados inválidos'})
