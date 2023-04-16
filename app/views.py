@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+#from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from app.forms import ClienteForm
@@ -7,11 +7,11 @@ from django.core.paginator import Paginator
 from django.http import JsonResponse
 
 
+#def home(request):
+#    return render(request, 'home.html')
+
+
 def home(request):
-    return render(request, 'home.html')
-
-
-def index(request):
     data = {}
     search = request.GET.get('search')
 
@@ -107,16 +107,16 @@ def painel(request):
     return render(request, 'home.html')
 
 
-def dologin(request):
-    data = {}
-    user = authenticate(username=request.POST['username'], password=request.POST['password'])
-    if user is not None:
-        login(request, user)
-        return redirect('index')
-    else:
-        data['msg'] = 'Login ou Senha incorretos, tente novamente!'
-        data['class'] = 'alert-danger'
-        return render(request, 'home.html', data)
+#def dologin(request):
+#    data = {}
+#    user = authenticate(username=request.POST['username'], password=request.POST['password'])
+#    if user is not None:
+#        login(request, user)
+#        return redirect('index')
+#    else:
+#        data['msg'] = 'Login ou Senha incorretos, tente novamente!'
+#        data['class'] = 'alert-danger'
+#        return render(request, 'home.html', data)
 
 
 def dashboard(request):

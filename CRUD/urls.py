@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 
-from app.views import home, form, create, view, edit, update, delete, brinde,create2, store, painel, dologin,  dashboard, index
+from app.views import home, form, create, view, edit, update, delete, brinde,create2, store, painel,  dashboard, index#, dologin
 
 
 urlpatterns = [
@@ -17,7 +17,7 @@ urlpatterns = [
     path('create2/', create2),
     path('store/', store),
     path('painel/', painel),
-    path('dologin/', dologin),
+#    path('dologin/', dologin),
     path('dashboard/', dashboard),
-    path('index/', index, name='index'),
+#    path('index/', index, name='index'),
 ]
