@@ -74,30 +74,30 @@ WSGI_APPLICATION = 'CRUD.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
+#DATABASES = {
+#    'default': {
+#        #'ENGINE': 'django.db.backends.sqlite3',
+#        #'NAME': BASE_DIR / 'db.sqlite3',
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'sistema',
+#        'PORT': '3306',
+#        'HOST': 'localhost',
+#        'USER': 'root',
+#        'PASSWORD': '',
+#    }
+# }
+
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sistema',
+        'NAME': 'heroku_395157665d8bbcd',
         'PORT': '3306',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': '',
-    }
- }
+        'HOST': 'us-cdbr-east-06.cleardb.net',
+        'USER': 'b30482e622e4b2',
+        'PASSWORD': 'bce5227c',
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'heroku_5c0cd841a28917a',
-#        'PORT': '3306',
-#        'HOST': 'us-cdbr-east-06.cleardb.net',
-#        'USER': 'b730adbf400653',
-#        'PASSWORD': 'fe529226',
-#
-#    }
-#}
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -135,6 +135,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 django_heroku.settings(locals())
-#del DATABASES['default']['OPTIONS']['sslmode']
+del DATABASES['default']['OPTIONS']['sslmode']
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
