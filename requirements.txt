@@ -20,7 +20,6 @@ Jinja2==3.1.2
 legacy==0.1.6
 MarkupSafe==2.1.2
 mysql-connector==2.2.9
-mysql-connector-python @ file:///C:/Python/mysql_connector_python-8.0.32-py2.py3-none-any.whl#sha256=e0299236297b63bf6cbb61d81a9d400bc01cad4743d1abe5296ef349de15ee53
 mysqlclient==2.1.1
 nodeenv==1.7.0
 protobuf==3.20.0
