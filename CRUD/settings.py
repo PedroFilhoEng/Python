@@ -95,7 +95,7 @@ DATABASES = {
         'HOST': 'us-cdbr-east-06.cleardb.net',
         'USER': 'b730adbf400653',
         'PASSWORD': 'fe529226',
-        'OPTIONS': {'ssl': {'ca':'/cleardb-ca.pem', 'cert':'/b730adbf400653-cert.pem', 'key':'/ b730adbf400653-key.pem'},},
+        'OPTIONS': {'ssl': {'ca':'/app/cleardb-ca.pem', 'cert':'/app/b730adbf400653-cert.pem', 'key':'/app/b730adbf400653-key.pem'},},
     }
 }
 
