@@ -20,7 +20,7 @@ def home(request):
 #        data['db'] = Cliente.objects.all()
         data['db'] = Cliente.objects.order_by('-id')
         all = Cliente.objects.order_by('-id')
-        paginator = Paginator(all,200)
+        paginator = Paginator(all,10)
         pages = request.GET.get('page')
         data['db'] = paginator.get_page(pages)
     return render(request, 'index.html', data)
