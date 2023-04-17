@@ -95,6 +95,8 @@ DATABASES = {
         'HOST': 'us-cdbr-east-06.cleardb.net',
         'USER': 'b730adbf400653',
         'PASSWORD': 'fe529226',
+        'OPTIONS': {
+            'ssl_disabled': True,},
     }
 }
 
