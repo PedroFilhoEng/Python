@@ -5,7 +5,7 @@ class Cliente(models.Model):
 #        ('GRAMADO - PEDRAS ALTAS', 'GRAMADO - PEDRAS ALTAS'),
 #        ('GRAMADO - STILO', 'GRAMADO - STILO'),
         ('GRAMADO - GOLDEN', 'GRAMADO - GOLDEN'),
-#        ('GRAMADO - NBA', 'GRAMADO - NBA'),
+        ('GRAMADO - NBA PARK', 'GRAMADO - NBA PARK'),
         ('CANELA - VIVERONE', 'CANELA - VIVERONE'),
 #        ('CANELA - CATEDRAL', 'CANELA - CATEDRAL'),
         ('GRAMADO - SIENA', 'GRAMADO - SIENA'),
@@ -53,6 +53,9 @@ class Cliente(models.Model):
         ('GM - RESTAURANTE KILO A KILO', 'GM - RESTAURANTE KILO A KILO'),
         ('GM - MUGO MIX', 'GM - MUGO MIX'),
         ('GM - DIVINO PIZZERIA RESTAURANTE', 'GM - DIVINO PIZZERIA RESTAURANTE'),
+        ('GM - INGRESSO PARK NBA', 'GM - INGRESSO PARK NBA'),
+        ('GM - CONSUMO RESTAURANTE NBA', 'GM - CONSUMO RESTAURANTE NBA'),
+        ('GM - NBA STORE', 'GM - NBA STORE'),
 
 ]
     Nome = models.CharField(max_length=150)
@@ -189,7 +192,12 @@ class Cliente(models.Model):
                     ENDEREÇO DO RESTAURANTE: RUA FELISBERTO SOARES, 16 - SALA 10 - CENTRO/ CANELA\n \
                     TELEFONE: 54 3282-9318 \n \
                     HORÁRIO DE ATENDIMENTO: 18:00am até 00:00 TODOS OS DIAS.'
-
+        elif self.Brinde == 'GM - INGRESSO PARK NBA':
+            return '#ESTE VOUCHER DA DIREITO A UM INGRESSO NO PARK NBA.'
+        elif self.Brinde == 'GM - CONSUMO RESTAURANTE NBA':
+            return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NO RESTAURANTE DO PARK NBA.'
+        elif self.Brinde == 'GM - NBA STORE':
+            return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NA NBA STORE, LOJA OFICIAL DA NBA.'
 
 
 
@@ -299,8 +307,12 @@ class Cliente(models.Model):
                     #NÃO HAVERÁ TROCO, CASO O CONSUMO SEJA MENOR QUE O VALOR DO VOUCHER#\n\n \
                     # VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO DO VOUCHER.\n\n \
                     É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER'
-
-
+        elif self.Brinde == 'GM - INGRESSO PARK NBA':
+            return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
+        elif self.Brinde == 'GM - CONSUMO RESTAURANTE NBA':
+            return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
+        elif self.Brinde == 'GM - NBA STORE':
+            return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
 
     descricao_do_brinde1 = property(descricao_brinde1)
     descricao_do_brinde2 = property(descricao_brinde2)
