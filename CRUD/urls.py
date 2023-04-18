@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 
-from app.views import home, form, create, view, edit, update, delete, brinde,create2, store#, painel,  dashboard, index, dologin
+from app.views import home, form, create, view, edit, update, delete,\
+    brinde, create2, store, download_planilha, admins, index, dologin
 
 
 urlpatterns = [
@@ -16,8 +17,8 @@ urlpatterns = [
     path('brinde/<int:pk>/', brinde, name='brinde'),
     path('create2/', create2),
     path('store/', store),
-#    path('painel/', painel),
-#    path('dologin/', dologin),
-#    path('dashboard/', dashboard),
-#    path('index/', index, name='index'),
+    path('clientes/download/', download_planilha, name='download_clientes'),
+    path('admins/', admins),
+    path('dologin/', dologin),
+    path('index/', index, name='index'),
 ]

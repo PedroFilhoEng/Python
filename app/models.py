@@ -59,6 +59,7 @@ class Cliente(models.Model):
     Brinde = models.CharField(max_length=54, choices=BRINDE_CHOICES)
     Sala = models.CharField(max_length=150,choices=SALA_CHOICES)
     Tempo = models.DateField(auto_now_add=True)
+
     def tempo_formatado(self):
         return self.Tempo.strftime('%d/%m/%Y')
 
