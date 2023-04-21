@@ -66,6 +66,35 @@
     </div>
 
 
+<!--
+
+  <h1>Clientes</h1>
+  <p><a href="{% url 'create' %}" class="btn btn-primary">Criar Novo Cliente</a></p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Sala</th>
+        <th>Brinde</th>
+        <th>Quantidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cliente in db %}
+        <tr>
+          <td>{{ cliente.id }}</td>
+          <td>{{ cliente.Nome }}</td>
+          <td>{{ cliente.Sala }}</td>
+          <td>{{ cliente.Brinde }}</td>
+          <td>{{ cliente.quantidade }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+-->
+
 
      <div class="container">
         <div class="row">
@@ -92,7 +121,7 @@
                                 <a href="/view/{{dbs.id}}/" class="btn btn-dark" title="Visualizar Cadastro do Cliente">  Visualizar</a>
                                 <a href="/brinde/{{dbs.id}}/" class="btn btn-success" title="Imprimir Brinde" target="_blank">Imprimir</a>
 
-                                <!--<a href="/edit/{{dbs.id}}/" class="btn btn-primary" title="Editar Cadastro do Cliente">  Editar</a>
+                               <!-- <a href="/edit/{{dbs.id}}/" class="btn btn-primary" title="Editar Cadastro do Cliente">  Editar</a>
                                 <a href="/delete/{{dbs.id}}/" class="btn btn-danger btnDel" title="Deletar Cadastro do Cliente">   Deletar</a>-->
                             </td>
                         </tr>

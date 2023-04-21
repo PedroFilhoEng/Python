@@ -3,10 +3,12 @@ from app.models import Cliente
 from django.contrib.auth.models import Group, Permission
 
 
+
 class ClienteForm(ModelForm):
+
     class Meta:
         model = Cliente
-        fields = ['Nome', 'Brinde', 'Sala']
+        fields = ['Nome', 'Brinde', 'Sala', 'quantidade']
 
 
 # GEEKS_CHOICES = (

@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
-
+from django.db import transaction
 from app.forms import ClienteForm
 
 from django.http import HttpResponse
@@ -31,6 +31,24 @@ def index(request):
         data['elided_pages'] = paginator.get_elided_page_range(number=current_page, on_each_side=3)
     return render(request, 'index.html', data)
 
+#def index(request):
+#    data = {}
+#    search = request.GET.get('search')
+#    if search:
+#        data['db'] = Cliente.objects.filter(Nome__icontains=search)
+#    else:
+#        all = Cliente.objects.order_by('-id')
+#        paginator = Paginator(all, 8)
+#        pages = request.GET.get('page')
+#        current_page = int(pages) if pages else 1
+#        data['db'] = paginator.get_page(current_page)
+#        data['elided_pages'] = paginator.get_elided_page_range(number=current_page, on_each_side=3)
+#    return render(request, 'index.html', data)
+#def index(request):
+#    data = {}
+#    all = Cliente.objects.order_by('-id')
+#    data['db'] = all
+#    return render(request, 'index.html', data)
 
 
 def form(request):
@@ -45,18 +63,32 @@ def form(request):
 #        return redirect('home')
 # noinspection PyShadowingNames
 
+#def create(request):
+#    data = {}
+#    form = ClienteForm(request.POST or None)
+#    if request.method == 'POST':
+#        if form.is_valid():
+#            form.save()
+#            return redirect('home')
+#        else:
+#            data['form'] = form
+#    else:
+#        data['form'] = ClienteForm()
+#    return render(request, 'form.html', data)
+
+
+
 def create(request):
-    data = {}
-    form = ClienteForm(request.POST or None)
     if request.method == 'POST':
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-        else:
-            data['form'] = form
-    else:
-        data['form'] = ClienteForm()
-    return render(request, 'form.html', data)
+        Nome = request.POST['Nome']
+        Sala = request.POST['Sala']
+        Brinde = request.POST['Brinde']
+        quantidade = int(request.POST['quantidade'])
+        for i in range(quantidade):
+                cliente = Cliente(Nome=Nome, Sala=Sala, Brinde=Brinde)
+                cliente.save()
+    return render(request, 'form.html')
+
 
 
 def view(request, pk):

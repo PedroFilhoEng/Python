@@ -52,16 +52,40 @@
                 </select>
          </div>
 
+        <div class="form-group">
+            <label for="quantidade">Quantidade</label>
+            <select class="form-control" id="quantidade" name="quantidade">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
 
             <div class="text-end">
                 <button id="Cancelar" name="Cancelar" class="btn btn-danger mt-4" type="Reset" onclick="window.location.href = '/index/'">Cancelar</button>
                 <input type="submit" class="btn btn-success mt-4" value="Salvar">
             </div>
+<!--
+ <h1>Criar Cliente</h1>
+ <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post" >
+                 {%  csrf_token %}
+                    <label for="Nome">Nome:</label>
+                    <input type="text" name="Nome"><br>
 
-    </form>
-</div>
+                    <label for="Sala">Sala:</label>
+                    <input type="text" name="Sala"><br>
 
+                    <label for="Brinde">Brinde:</label>
+                    <input type="text" name="Brinde"><br>
 
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" name="quantidade" min="1" value="1"><br>
+
+                    <input type="submit" value="Cadastrar">
+             </form>
+-->
 
 {% load static %}
 
