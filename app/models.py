@@ -220,7 +220,7 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - NBA STORE':
             return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NA NBA STORE, LOJA OFICIAL DA NBA.'
         elif self.Brinde == 'GM - FOTO DIGITAL RELOGIO DE LONDRES (FOREVER IN GRAMADO)':
-            return 'teste'
+            return '# ESTE VOUCHER DA DIREITO A UMA FOTO DIGITAL NO TELEFONE DE LONDRE - LOJA FOREVER IN GRAMADO.'
 
 
     def descricao_brinde2(self):
@@ -338,7 +338,8 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - NBA STORE':
             return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
         elif self.Brinde == 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO':
-            return 'teste'
+            return '#SOMENTE SERÁ ACEITO UM VOUCHER POR SESSÃO FOTOGRÁFICA. SE EXISTIREM OUTROS VOUCHERS NA MESMA, OS DEMAIS SERÃO INVÁLIDOS.\n\n \
+                    #CASO TENHA ADQUIRIDO OUTRAS OFERTAS, ESTE NÃO SERÁ CONSIDERADO.'
 
 
     descricao_do_brinde1 = property(descricao_brinde1)
