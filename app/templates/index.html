@@ -7,6 +7,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" integrity="sha512-bNhgnJHThy7V94c1sEuc7sK91Wo8ZUaJZYZ6wZK6E3q6D50pPzJMrKj+U1I9Xj8fn+vgIS+sZY+hRlBbLHTJ+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+
          <style>
             .center {
               text-align: center;
@@ -60,10 +64,14 @@
 
      <div class="container">
        <div class="table-responsive text-end pt-4 pb-4">
-           <a href="/form" class="" title="Cadastrar novos clientes"><button type="button" class="btn btn-outline-primary" style="width:25%;height:10%">Cadastrar novos clientes</button></a>
+          <a href="/form" class="" title="Cadastrar novos clientes"><button type="button" class="btn btn-outline-primary" style="width:25%;height:10%">Cadastrar novos clientes</button></a>
+
+
+
+
 
        </div>
-    </div>
+     </div>
 
 
 <!--
@@ -164,7 +172,41 @@
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
+        <script>
+          // Adiciona um evento de clique ao botão "Cadastrar novos clientes"
+          document.querySelector('#cadastrar-cliente-modal button[type="button"]').addEventListener('click', function() {
+            // Carrega o conteúdo do arquivo "form.html" usando uma solicitação AJAX
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+              if (xhr.readyState === 4 && xhr.status === 200) {
+                // Adiciona o conteúdo do arquivo à div "form-content"
+                document.querySelector('#form-content').innerHTML = xhr.responseText;
+              }
+            };
+            xhr.open('GET', '/form.html', true);
+            xhr.send();
+          });
+        </script>
 
+        <script>
+                $(document).ready(function() {
+                    $('#Brinde').select2();
+                });
+            </script>
+            <script>
+                $(document).ready(function() {
+                    $('#Sala').select2();
+                });
+            </script>
+
+            <script>
+                $(document).ready(function() {
+                    $('.js-example-basic-multiple').select2();
+                });
+
+                let selectBoxes = document.querySelectorAll('#modal-form select');
+                let choices = new Choices(selectBoxes);
+            </script>
 
      </body>
     </html>

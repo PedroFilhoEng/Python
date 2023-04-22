@@ -66,11 +66,12 @@ class Cliente(models.Model):
         ('GM - INGRESSO PARK NBA - 2 PESSOAS', 'GM - INGRESSO PARK NBA - 2 PESSOAS'),
         ('GM - CONSUMO RESTAURANTE NBA', 'GM - CONSUMO RESTAURANTE NBA'),
         ('GM - NBA STORE', 'GM - NBA STORE'),
+        ('GM - FOTO DIGITAL NO TELEFONE DE LONDRES - FOREVER IN GRAMADO', 'GM - FOTO DIGITAL NO TELEFONE DE LONDRES - FOREVER IN GRAMADO'),
 
 
 ]
     Nome = models.CharField(max_length=150)
-    Brinde = models.CharField(max_length=54, choices=BRINDE_CHOICES)
+    Brinde = models.CharField(max_length=150, choices=BRINDE_CHOICES)
     Sala = models.CharField(max_length=150,choices=SALA_CHOICES)
     Tempo = models.DateField(auto_now_add=True)
     quantidade = models.IntegerField(default=1,choices=QUANTIDADE_CHOICES)
@@ -218,7 +219,8 @@ class Cliente(models.Model):
             return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NO RESTAURANTE DO PARK NBA.'
         elif self.Brinde == 'GM - NBA STORE':
             return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NA NBA STORE, LOJA OFICIAL DA NBA.'
-
+        elif self.Brinde == 'GM - FOTO DIGITAL NO TELEFONE DE LONDRES - FOREVER IN GRAMADO':
+            return 'VOUCHER VÁLIDO PARA UMA FOTO DIGITAL NO RELÓGIO DE LONDRES.'
 
 
     def descricao_brinde2(self):
@@ -335,6 +337,11 @@ class Cliente(models.Model):
             return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
         elif self.Brinde == 'GM - NBA STORE':
             return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
+        elif self.Brinde == 'GM - FOTO DIGITAL NO TELEFONE DE LONDRES - FOREVER IN GRAMADO':
+            return '# SOMENTE SERÁ ACEITO UM VOUHER POR SESSÃO FOTOGRÁFICA. SE EXISTIREM OUTROS VOUCHERS NA MESMA, OS DEMAIS SERÃO INVÁLIDOS. \n\n' \
+                   '# CASO TENHA ADQUIRIDO OUTRAS OFERTAS, ESTE NÃO SERÁ CONSIDERADO.\n\n' \
+                   '# ENDEREÇO: RUA GARIBALDI 180 (EM FRENTE AO SERRA AZUL), SALA 04, CENTRO, GRAMADO-RS.'
+
 
     descricao_do_brinde1 = property(descricao_brinde1)
     descricao_do_brinde2 = property(descricao_brinde2)

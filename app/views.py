@@ -2,9 +2,9 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
-from django.db import transaction
+# from django.db import transaction
 from app.forms import ClienteForm
-
+from django.http import JsonResponse
 from django.http import HttpResponse
 from openpyxl import Workbook
 from .models import Cliente
@@ -31,7 +31,7 @@ def index(request):
         data['elided_pages'] = paginator.get_elided_page_range(number=current_page, on_each_side=3)
     return render(request, 'index.html', data)
 
-#def index(request):
+# def index(request):
 #    data = {}
 #    search = request.GET.get('search')
 #    if search:
@@ -44,7 +44,7 @@ def index(request):
 #        data['db'] = paginator.get_page(current_page)
 #        data['elided_pages'] = paginator.get_elided_page_range(number=current_page, on_each_side=3)
 #    return render(request, 'index.html', data)
-#def index(request):
+# def index(request):
 #    data = {}
 #    all = Cliente.objects.order_by('-id')
 #    data['db'] = all
@@ -63,7 +63,7 @@ def form(request):
 #        return redirect('home')
 # noinspection PyShadowingNames
 
-#def create(request):
+# def create(request):
 #    data = {}
 #    form = ClienteForm(request.POST or None)
 #    if request.method == 'POST':
@@ -77,17 +77,21 @@ def form(request):
 #    return render(request, 'form.html', data)
 
 
-
 def create(request):
     if request.method == 'POST':
-        Nome = request.POST['Nome']
-        Sala = request.POST['Sala']
-        Brinde = request.POST['Brinde']
-        quantidade = int(request.POST['quantidade'])
-        for i in range(quantidade):
+        Nome = request.POST.get('Nome', '').strip()
+        Sala = request.POST.get('Sala', '').strip()
+        Brinde = request.POST.get('Brinde', '').strip()
+        if Nome and Sala and Brinde:
+            quantidade = int(request.POST.get('quantidade', 0))
+            for i in range(quantidade):
                 cliente = Cliente(Nome=Nome, Sala=Sala, Brinde=Brinde)
                 cliente.save()
-    return render(request, 'form.html')
+            return JsonResponse({'status': 'success'})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Por favor, preencha todos os campos obrigatórios.'})
+    else:
+        return render(request, 'form.html')
 
 
 

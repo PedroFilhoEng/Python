@@ -35,7 +35,7 @@
             <label for="Nome">Nome do Cliente</label>
             <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Digite o nome do cliente">
         </div>
-        <div class="form-group">
+        <div class="form-group mt-4">
             <label for="Sala">Sala</label>
             <select class="form-control" id="Sala" name="Sala">
                 {% for Sala in form.Sala %}
@@ -43,16 +43,16 @@
                 {% endfor %}
             </select>
         </div>
-         <div class="form-group">
-                <label for="Brinde">Brinde</label>
-                <select class="form-control" id="Brinde" name="Brinde">
-                    {% for Brinde in form.Brinde %}
+        <div class="form-group mt-4">
+            <label for="Brinde">Brinde</label>
+            <select class="form-control" id="Brinde" name="Brinde">
+                {% for Brinde in form.Brinde %}
                     <option>{{ Brinde }}</option>
-                    {% endfor %}
-                </select>
-         </div>
+                {% endfor %}
+            </select>
+        </div>
 
-        <div class="form-group">
+        <div class="form-group mt-4">
             <label for="quantidade">Quantidade</label>
             <select class="form-control" id="quantidade" name="quantidade">
                 <option value="1" selected>1</option>
@@ -63,50 +63,32 @@
             </select>
         </div>
 
-            <div class="text-end">
-                <button id="Cancelar" name="Cancelar" class="btn btn-danger mt-4" type="Reset" onclick="window.location.href = '/index/'">Cancelar</button>
-                <input type="submit" class="btn btn-success mt-4" value="Salvar">
-            </div>
-<!--
- <h1>Criar Cliente</h1>
- <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post" >
-                 {%  csrf_token %}
-                    <label for="Nome">Nome:</label>
-                    <input type="text" name="Nome"><br>
+        <div class="text-end mt-4">
+            <button id="Cancelar" name="Cancelar" class="btn btn-danger mt-4" type="Reset" onclick="window.location.href = '/index/'">Cancelar</button>
+            <input type="submit" class="btn btn-success mt-4" value="Salvar">
+        </div>
+    </form>
+</div>
+    {% load static %}
 
-                    <label for="Sala">Sala:</label>
-                    <input type="text" name="Sala"><br>
+    <script src="{% static 'javascript.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#Brinde').select2();
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#Sala').select2();
+        });
+    </script>
 
-                    <label for="Brinde">Brinde:</label>
-                    <input type="text" name="Brinde"><br>
-
-                    <label for="quantidade">Quantidade:</label>
-                    <input type="number" name="quantidade" min="1" value="1"><br>
-
-                    <input type="submit" value="Cadastrar">
-             </form>
--->
-
-{% load static %}
-
-<script src="{% static 'javascript.js' %}"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#Brinde').select2();
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#Sala').select2();
-    });
-</script>
 
 </body>
 </html>
-
-       <!--<form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post" >
+<!--<form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post" >
                  {%  csrf_token %}
                  <div class="form-group">
 
