@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
-# from django.db import transaction
+from django.db import transaction
 from app.forms import ClienteForm
 
 from django.http import HttpResponse
