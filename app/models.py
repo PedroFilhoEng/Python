@@ -66,7 +66,7 @@ class Cliente(models.Model):
         ('GM - INGRESSO PARK NBA - 2 PESSOAS', 'GM - INGRESSO PARK NBA - 2 PESSOAS'),
         ('GM - CONSUMO RESTAURANTE NBA', 'GM - CONSUMO RESTAURANTE NBA'),
         ('GM - NBA STORE', 'GM - NBA STORE'),
-        ('GM - FOTO DIGITAL RELOGIO DE LONDRES (FOREVER IN GRAMADO)', 'GM - FOTO DIGITAL RELOGIO DE LONDRES (FOREVER IN GRAMADO)'),
+        ('GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO', 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO'),
 
 
 ]
@@ -101,7 +101,7 @@ class Cliente(models.Model):
 
 
     def descricao_brinde1(self):
-        if self.Brinde == 'GM - RESTAURANTE LAGHETTO':
+        if self.Brinde == 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO':
             return '#Válido para consumo de R$ 80,00 em todos restaurantes dos Hotéis Laghetto em Gramado-RS e Canela-RS.'
         elif self.Brinde == 'GM - FOTO NA NEVE':
             return '#R$15,00 a foto do casal.\n#Endereço: Rua Bruno Ernesto Riegel, 713, Planalto, Gramado - RS.\n#Horário de atendimento: Diariamente, das 09h as 17h.'
@@ -337,7 +337,7 @@ class Cliente(models.Model):
             return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
         elif self.Brinde == 'GM - NBA STORE':
             return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
-        elif self.Brinde == 'GM - FOTO DIGITAL RELOGIO DE LONDRES (FOREVER IN GRAMADO)':
+        elif self.Brinde == 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO':
             return 'teste'
 
 
