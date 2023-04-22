@@ -71,7 +71,7 @@ class Cliente(models.Model):
 
 ]
     Nome = models.CharField(max_length=150)
-    Brinde = models.CharField(max_length=150, choices=BRINDE_CHOICES)
+    Brinde = models.CharField(max_length=250, choices=BRINDE_CHOICES)
     Sala = models.CharField(max_length=150,choices=SALA_CHOICES)
     Tempo = models.DateField(auto_now_add=True)
     quantidade = models.IntegerField(default=1,choices=QUANTIDADE_CHOICES)
