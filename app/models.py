@@ -66,7 +66,7 @@ class Cliente(models.Model):
         ('GM - INGRESSO PARK NBA - 2 PESSOAS', 'GM - INGRESSO PARK NBA - 2 PESSOAS'),
         ('GM - CONSUMO RESTAURANTE NBA', 'GM - CONSUMO RESTAURANTE NBA'),
         ('GM - NBA STORE', 'GM - NBA STORE'),
-        ('GM - FOTO DIGITAL NO TELEFONE DE LONDRES - FOREVER IN GRAMADO', 'GM - FOTO DIGITAL NO TELEFONE DE LONDRES - FOREVER IN GRAMADO'),
+        ('teste', 'teste'),
 
 
 ]
@@ -219,8 +219,8 @@ class Cliente(models.Model):
             return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NO RESTAURANTE DO PARK NBA.'
         elif self.Brinde == 'GM - NBA STORE':
             return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NA NBA STORE, LOJA OFICIAL DA NBA.'
-        elif self.Brinde == 'GM - FOTO DIGITAL NO TELEFONE DE LONDRES - FOREVER IN GRAMADO':
-            return 'VOUCHER VÁLIDO PARA UMA FOTO DIGITAL NO RELÓGIO DE LONDRES.'
+        elif self.Brinde == 'teste':
+            return 'teste'
 
 
     def descricao_brinde2(self):
@@ -337,10 +337,8 @@ class Cliente(models.Model):
             return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
         elif self.Brinde == 'GM - NBA STORE':
             return '#HORÁRIO DE FUNCIONAMENTO: 10:00H ÀS 17:00H'
-        elif self.Brinde == 'GM - FOTO DIGITAL NO TELEFONE DE LONDRES - FOREVER IN GRAMADO':
-            return '# SOMENTE SERÁ ACEITO UM VOUHER POR SESSÃO FOTOGRÁFICA. SE EXISTIREM OUTROS VOUCHERS NA MESMA, OS DEMAIS SERÃO INVÁLIDOS.\n\n \
-                    # CASO TENHA ADQUIRIDO OUTRAS OFERTAS, ESTE NÃO SERÁ CONSIDERADO.\n\n \
-                    # ENDEREÇO: RUA GARIBALDI 180 (EM FRENTE AO SERRA AZUL), SALA 04, CENTRO, GRAMADO-RS.'
+        elif self.Brinde == 'teste':
+            return 'teste'
 
 
     descricao_do_brinde1 = property(descricao_brinde1)
