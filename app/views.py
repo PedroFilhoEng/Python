@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 # from django.db import transaction
 from app.forms import ClienteForm
-from django.http import JsonResponse
+
 from django.http import HttpResponse
 from openpyxl import Workbook
 from .models import Cliente
@@ -83,15 +83,11 @@ def create(request):
         Sala = request.POST.get('Sala', '').strip()
         Brinde = request.POST.get('Brinde', '').strip()
         if Nome and Sala and Brinde:
-            quantidade = int(request.POST.get('quantidade', 0))
+            quantidade = int(request.POST.get('quantidade', 1))
             for i in range(quantidade):
                 cliente = Cliente(Nome=Nome, Sala=Sala, Brinde=Brinde)
                 cliente.save()
-            return JsonResponse({'status': 'success'})
-        else:
-            return JsonResponse({'status': 'error', 'message': 'Por favor, preencha todos os campos obrigatórios.'})
-    else:
-        return render(request, 'form.html')
+    return render(request, 'form.html')
 
 
 
