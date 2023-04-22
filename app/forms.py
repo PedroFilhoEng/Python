@@ -11,19 +11,6 @@ class ClienteForm(ModelForm):
         fields = ['Nome', 'Brinde', 'Sala', 'quantidade']
 
 
-# GEEKS_CHOICES = (
-#    ("1", "BT - LAGHETTO VIVERONE"),
-#    ("2", "CN - CATEDRAL"),
-#    ("3", "CN - LAGHETTO VIVERONE"),
-#    ("4", "GM - GOLDEN GRAMADO"),
-#    ("5", "GM - PEDRAS ALTAS"),
-#    ("6", "GM - STILO BORGES"),
-# )
-
-
-# class GeeksChoicesForm(forms.Form):
-#    geeks_field = forms.ChoiceField(choices=GEEKS_CHOICES)
-
 
 # Criando um grupo de usuários com acesso à área administrativa
 admin_group, created = Group.objects.get_or_create(name='Admins')

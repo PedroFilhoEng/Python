@@ -79,14 +79,13 @@ def form(request):
 
 def create(request):
     if request.method == 'POST':
-        Nome = request.POST.get('Nome', '').strip()
-        Sala = request.POST.get('Sala', '').strip()
-        Brinde = request.POST.get('Brinde', '').strip()
-        if Nome and Sala and Brinde:
-            quantidade = int(request.POST.get('quantidade', 1))
+            Nome = request.POST['Nome']
+            Sala = request.POST['Sala']
+            Brinde = request.POST['Brinde']
+            quantidade = int(request.POST['quantidade'])
             for i in range(quantidade):
-                cliente = Cliente(Nome=Nome, Sala=Sala, Brinde=Brinde)
-                cliente.save()
+                    cliente = Cliente(Nome=Nome, Sala=Sala, Brinde=Brinde)
+                    cliente.save()
     return render(request, 'form.html')
 
 

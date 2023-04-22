@@ -341,7 +341,7 @@ class Cliente(models.Model):
             return '# SOMENTE SERÁ ACEITO UM VOUHER POR SESSÃO FOTOGRÁFICA. SE EXISTIREM OUTROS VOUCHERS NA MESMA, OS DEMAIS SERÃO INVÁLIDOS.\n\n \
                     # CASO TENHA ADQUIRIDO OUTRAS OFERTAS, ESTE NÃO SERÁ CONSIDERADO.\n\n \
                     # ENDEREÇO: RUA GARIBALDI 180 (EM FRENTE AO SERRA AZUL), SALA 04, CENTRO, GRAMADO-RS.'
-       
+
 
     descricao_do_brinde1 = property(descricao_brinde1)
     descricao_do_brinde2 = property(descricao_brinde2)
