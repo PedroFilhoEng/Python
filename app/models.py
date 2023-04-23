@@ -67,6 +67,7 @@ class Cliente(models.Model):
         ('GM - CONSUMO RESTAURANTE NBA', 'GM - CONSUMO RESTAURANTE NBA'),
         ('GM - NBA STORE', 'GM - NBA STORE'),
         ('GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO', 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO'),
+        ('BG - CANTINA DEL VANUCCI', 'BG - CANTINA DEL VANUCCI'),
 
 
 ]
@@ -101,7 +102,7 @@ class Cliente(models.Model):
 
 
     def descricao_brinde1(self):
-        if self.Brinde == 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO':
+        if self.Brinde == 'GM - RESTAURANTE LAGHETTO':
             return '#Válido para consumo de R$ 80,00 em todos restaurantes dos Hotéis Laghetto em Gramado-RS e Canela-RS.'
         elif self.Brinde == 'GM - FOTO NA NEVE':
             return '#R$15,00 a foto do casal.\n#Endereço: Rua Bruno Ernesto Riegel, 713, Planalto, Gramado - RS.\n#Horário de atendimento: Diariamente, das 09h as 17h.'
@@ -223,6 +224,8 @@ class Cliente(models.Model):
             return '# ESTE VOUCHER DA DIREITO A UMA FOTO DIGITAL NO TELEFONE DE LONDRE - LOJA FOREVER IN GRAMADO.'
 
 
+
+
     def descricao_brinde2(self):
         if self.Brinde == 'GM - RESTAURANTE LAGHETTO':
             return '#ABERTO DIARIAMENTE#\n#NÃO HAVERÁ TROCO, CASO O CONSUMO SEJA MENOR QUE O VALOR DO VOUCHER#\n# VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO DO VOUCHER.#\n# É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO.'
@@ -340,7 +343,6 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO':
             return '#SOMENTE SERÁ ACEITO UM VOUCHER POR SESSÃO FOTOGRÁFICA. SE EXISTIREM OUTROS VOUCHERS NA MESMA, OS DEMAIS SERÃO INVÁLIDOS.\n\n \
                     #CASO TENHA ADQUIRIDO OUTRAS OFERTAS, ESTE NÃO SERÁ CONSIDERADO.'
-
 
     descricao_do_brinde1 = property(descricao_brinde1)
     descricao_do_brinde2 = property(descricao_brinde2)
