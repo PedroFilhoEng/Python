@@ -68,6 +68,8 @@ class Cliente(models.Model):
         ('GM - NBA STORE', 'GM - NBA STORE'),
         ('GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO', 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO'),
         ('BG - CANTINA DEL VANUCCI', 'BG - CANTINA DEL VANUCCI'),
+        ('BG - PIZZATO VINHA E VINHOS', 'BG - PIZZATO VINHA E VINHOS'),
+        ('BG - PIZZA PLACE', 'BG - PIZZA PLACE'),
 
 
 ]
@@ -222,6 +224,31 @@ class Cliente(models.Model):
             return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NA NBA STORE, LOJA OFICIAL DA NBA.'
         elif self.Brinde == 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO':
             return '# ESTE VOUCHER DA DIREITO A UMA FOTO DIGITAL NO TELEFONE DE LONDRE - LOJA FOREVER IN GRAMADO.'
+        elif self.Brinde == 'BG - CANTINA DEL VANUCCI':
+            return '# RODIZIO ITALIANO DENTRO DO RESTAURANTE CANTINA DEL VANUCCI.\n\n \
+                            #VALOR UNITARIO DO VOUCHER DE R$ 55,00.\n\n \
+                            #HORARIO DE FUNCIONAMENTO\n \
+                            #ALMOÇO DAS 11:00 AS 15:00 HORAS TODOS OS DIAS DA SEMANA.\n \
+                            #JANTAR DAS 19:00 AS 23:00  VALIDO AOS SABADOS APENAS\n\n \
+                            # ENDEREÇO DO LOCAL: ALAMEDA CHAMPENOISE, N° 44, LOTE 4 - VALE DOS VINHEDOS\n \
+                            # GARIBALDI – RS – BRASIL\n \
+                            # CEP:  95720-000\n\n \
+                            # AGENDAR SUA RESERVA\n\n \
+                            # TEL: (54) 3698-6777'
+        elif self.Brinde == 'BG - PIZZATO VINHA E VINHOS':
+            return '# DEGUSTAÇÃO DE BALÇÃO 4 ROTULOS DENTRO DA VINICOLA PIZZATO.\n\n \
+                    # VALOR UNITARIO DO VOUCHER DE R$ 45,00.\n\n \
+                    # HORARIO DE FUNCIONAMENTO DAS 10:00 AS 17:00 HORAS VAIDO  TODOS OS DIAS DA SEMANA.\n\n \
+                    # ENDEREÇO DO LOCAL: VIA DOS PARRERAIS, S/N\n \
+                    --SANTA LUCIA – VALE DOS VINHEDOS\n \
+                    -- BENTO GONÇALVES – RS – BRASIL\n \
+                    -- CEP: 95711-000'
+        elif self.Brinde == 'BG - PIZZA PLACE':
+            return '# RODIZIO DE PIZZA OU CONSUMAÇÃO NO RESTAURANTE.\n\n \
+                    # VALOR UNITARIO DO VOUCHER DE R$ 50,00.\n\n \
+                    # HORARIO DE FUNCIONAMENTO DAS 18:00 AS 22:30 HORAS VALIDO  TODOS OS DIAS DA SEMANA.\n\n \
+                    # ENDEREÇO DO LOCAL: AV. PLANALTO, N° 775, BENTO GONÇALVES – RS – BRASIL, CEP: 95703-164. \n\n \
+                    # TELEFONE: (54) 3698-3603'
 
 
 
@@ -343,6 +370,18 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO':
             return '#SOMENTE SERÁ ACEITO UM VOUCHER POR SESSÃO FOTOGRÁFICA. SE EXISTIREM OUTROS VOUCHERS NA MESMA, OS DEMAIS SERÃO INVÁLIDOS.\n\n \
                     #CASO TENHA ADQUIRIDO OUTRAS OFERTAS, ESTE NÃO SERÁ CONSIDERADO.'
+        elif self.Brinde == 'BG - CANTINA DEL VANUCCI':
+            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS ## \n \n \
+                    ##VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO.#\n \n \
+                    **É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER**'
+        elif self.Brinde == 'BG - PIZZATO VINHA E VINHOS':
+            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS ## \n \n \
+                    ##VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO.#\n \n \
+                    **É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER**'
+        elif self.Brinde == 'BG - PIZZA PLACE':
+            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS ## \n \n \
+                    ##VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO.#\n \n \
+                    **É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER**'
 
     descricao_do_brinde1 = property(descricao_brinde1)
     descricao_do_brinde2 = property(descricao_brinde2)
