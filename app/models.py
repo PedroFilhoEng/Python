@@ -71,6 +71,7 @@ class Cliente(models.Model):
         ('BG - PIZZATO VINHA E VINHOS', 'BG - PIZZATO VINHA E VINHOS'),
         ('BG - PIZZA PLACE', 'BG - PIZZA PLACE'),
         ('BG - WINE GARDEN', 'BG - WINE GARDEN'),
+        ('BG - COMPLEXO DA ESTAÇÃO', 'BG - COMPLEXO DA ESTAÇÃO'),
 
 
 ]
@@ -256,6 +257,12 @@ class Cliente(models.Model):
                     # VALOR UNITARIO DO VOUCHER DE R$ 50,00.\n\n \
                     # HORARIO DE FUNCIONAMENTO DAS 12:00 AS 17:30 HORAS VALIDO  DE QUARTA Á DOMINGO. \n\n \
                     # ENDEREÇO DO LOCAL: ROD. RS-444, VALE DOS VINHEDOS, BENTO GONÇALVES-RS, CEP: 95711-000.'
+        elif self.Brinde == 'BG - COMPLEXO DA ESTAÇÃO':
+            return '# VOUCHER PARA CONSUMAÇÃO NO RESTAURANTE COMPLEXO DA ESTAÇÃO.\n\n \
+                    # VALOR UNITARIO DO VOUCHER DE R$ 50,00.\n\n \
+                    # HORARIO DE FUNCIONAMENTO DAS 12:00 AS 15:00 HORAS. \n\n \
+                    # VALIDO DE TERÇA Á DOMINGO. \n\n \
+                    # ENDEREÇO DO LOCAL: RUA DUQUE DE CAXIAS 148, CIDADE ALTA, BENTO GONÇALVES-RS, CEP: 95700-380.'
 
 
 
@@ -390,6 +397,11 @@ class Cliente(models.Model):
                     ##VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO.#\n \n \
                     **É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER**'
         elif self.Brinde == 'BG - WINE GARDEN':
+            return '## NÃO HAVERÁ TROCO, CASO O CONSUMO SEJA MENOR QUE O VALOR DO VOUCHER ## \n \n \
+                    ## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS ## \n \n \
+                    ##VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO.#\n \n \
+                    **É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER**'
+        elif self.Brinde == 'BG - COMPLEXO DA ESTAÇÃO':
             return '## NÃO HAVERÁ TROCO, CASO O CONSUMO SEJA MENOR QUE O VALOR DO VOUCHER ## \n \n \
                     ## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS ## \n \n \
                     ##VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO.#\n \n \
