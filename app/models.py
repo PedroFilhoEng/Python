@@ -223,7 +223,7 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - NBA STORE':
             return '#ESTE VOUCHER DA DIREITO AO CONSUMO DE R$: 100,00 NA NBA STORE, LOJA OFICIAL DA NBA.'
         elif self.Brinde == 'GM - FOTO DIGITAL LOJA FOREVER IN GRAMADO':
-            return '# ESTE VOUCHER DA DIREITO A UMA FOTO DIGITAL NO TELEFONE DE LONDRE - LOJA FOREVER IN GRAMADO.'
+            return '# ESTE VOUCHER DA DIREITO A UMA FOTO DIGITAL NO TELEFONE DE LONDRES - LOJA FOREVER IN GRAMADO.'
         elif self.Brinde == 'BG - CANTINA DEL VANUCCI':
             return '# RODIZIO ITALIANO DENTRO DO RESTAURANTE CANTINA DEL VANUCCI.\n\n \
                             #VALOR UNITARIO DO VOUCHER DE R$ 55,00.\n\n \
