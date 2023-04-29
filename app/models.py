@@ -72,6 +72,7 @@ class Cliente(models.Model):
         ('BG - PIZZA PLACE', 'BG - PIZZA PLACE'),
         ('BG - WINE GARDEN', 'BG - WINE GARDEN'),
         ('BG - COMPLEXO DA ESTAÇÃO', 'BG - COMPLEXO DA ESTAÇÃO'),
+        ('GM - U DRIVE', 'GM - U DRIVE'),
 
 
 ]
@@ -264,6 +265,10 @@ class Cliente(models.Model):
                     # HORARIO DE FUNCIONAMENTO DAS 12:00 AS 15:00 HORAS. \n\n \
                     # VALIDO DE TERÇA Á DOMINGO. \n\n \
                     # ENDEREÇO DO LOCAL: RUA DUQUE DE CAXIAS 148, CIDADE ALTA, BENTO GONÇALVES-RS, CEP: 95700-380.'
+        elif self.Brinde == 'GM - U DRIVE':
+            return '# ESSE VOUCHER DA DIREITO A UM DRIVE E UMA CARONA NA U DRIVE - EXOTIC CARS.\n\n \
+                    # VALOR DO VOUCHER - R$: 120,00.\n\n \
+                    # CAMARO SS V8 CONVERSÍVEL.'
 
 
 
@@ -407,6 +412,15 @@ class Cliente(models.Model):
                     ## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS ## \n \n \
                     ##VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO.#\n \n \
                     **É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER**'
+        elif self.Brinde == 'GM - U DRIVE':
+            return '## NÃO HAVENDO CONDIÇÕES CLIMÁTICAS FAVORÁVEIS, A U DRIVE SE DARÁ O DIREITO DE REMARCAR O PASSEIO, NÃO HAVENDO POSSIBILIDADE DE REEMBOLSO## \n \n \
+                    ## ESSE VOUCHER DÁ DIREITO AO PILOTO E UM ACOMPANHANTE, PARA SEGUNDO ACOMPANHANTE,CASO CLIENTE DESEJAR, SERÁ ACERTADO DIRETAMENTE COM A U DRIVE## \n \n \
+                    ## LOTAÇÃO MÁXIMA DO CARRO: 4 PESSOAS, SENDO 1 INSTRUTOR + 3 CLIENTES.##\n \n \
+                    ## CASO O VEÍCULO NÃO ESTEJA DISPONÍVEL A U DRIVE SE DARÁ AO DIREITO DE OFERECER A TROCA AO CLIENTE.##\n \n \
+                    ## PARA TROCAR POR VEÍCULO DE IGUAL OU MENOR VALOR SERÁ COBRADO O VALOR DE R$ 150,00.##\n \n \
+                    ## OU CONSIDERAR UM CRÉDITO DE R$ 200,00 PARA OUTROS VEÍCULOS.##\n \n \
+                    ## FAVOR AGENDAR SEU PASSEIO PELO FONE (54) 9 9198 5749.##\n \n \
+                    **ENDEREÇO: RUA SILVEIRA MARTINS 50. BAIRRO CARNIEL – GRAMADO**\n'
 
     descricao_do_brinde1 = property(descricao_brinde1)
     descricao_do_brinde2 = property(descricao_brinde2)
