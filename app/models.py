@@ -267,8 +267,7 @@ class Cliente(models.Model):
                     # ENDEREÇO DO LOCAL: RUA DUQUE DE CAXIAS 148, CIDADE ALTA, BENTO GONÇALVES-RS, CEP: 95700-380.'
         elif self.Brinde == 'GM - U DRIVE':
             return '# ESSE VOUCHER DA DIREITO A UM DRIVE E UMA CARONA NA U DRIVE - EXOTIC CARS.\n\n \
-                    # VALOR DO VOUCHER - R$: 120,00.\n\n \
-                    # CAMARO SS V8 CONVERSÍVEL.'
+                    # VALOR DO VOUCHER R$: 120,00 - MODELO DO CARRO: CAMARO SS V8 CONVERSÍVEL.\n '
 
 
 
