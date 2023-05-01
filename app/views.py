@@ -2,10 +2,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
-from django.db import transaction
 from app.forms import ClienteForm
-from django.contrib import messages
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from openpyxl import Workbook
 from .models import Cliente
 from .forms import ClienteForm
@@ -29,7 +27,7 @@ def index(request):
         data['db'] = paginator.get_page(current_page)
         data['elided_pages'] = paginator.get_elided_page_range(number=current_page, on_each_side=3)
     return render(request, 'index.html', data)
-
+"""
 # def index(request):
 #    data = {}
 #    search = request.GET.get('search')
@@ -48,12 +46,12 @@ def index(request):
 #    all = Cliente.objects.order_by('-id')
 #    data['db'] = all
 #    return render(request, 'index.html', data)
-
+"""
 
 def form(request):
     data = {'form': ClienteForm()}
     return render(request, 'form.html', data)
-
+"""
 # def create(request):
 #    data = {}
 #    form = ClienteForm(request.POST or None)
@@ -66,9 +64,9 @@ def form(request):
 #    else:
 #        data['form'] = ClienteForm()
 #    return render(request, 'form.html', data)
+"""
 
-
-def create(request):
+""" def create(request):
     if request.method == 'POST':
         Nome = request.POST['Nome']
         Sala = request.POST['Sala']
@@ -80,6 +78,22 @@ def create(request):
                 cliente.save()
             else:
                 return render(request, 'form.html', {'error': 'Por favor, preencha todos os campos.'})
+    return render(request, 'form.html')
+ """
+
+def create(request):
+    if request.method == 'POST':
+        Nome = request.POST['Nome']
+        Sala = request.POST['Sala']
+        Brinde = request.POST['Brinde']
+        quantidade = int(request.POST['quantidade'])
+        if not (Nome and Sala and Brinde):
+            return JsonResponse({'error_message': 'Por favor, preencha todos os campos!'})
+        else:
+            for i in range(quantidade):
+                cliente = Cliente(Nome=Nome, Sala=Sala, Brinde=Brinde)
+                cliente.save()
+            return JsonResponse({'success_message': 'Cadastro realizado com sucesso!'})
     return render(request, 'form.html')
 
 
