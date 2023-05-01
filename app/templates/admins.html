@@ -2,63 +2,62 @@
 {% block content %}
 
 
-    <div class="col-md-10 align-content-center mt-4">
-       <div class="row">
-            <div class="col-3"></div>
+<div class="col-12 mt-4">
+    <div class="row justify-content-center">
         <div class="col-3">
-                <div class="card text-center">
-                      <div class="card-body">
-                          <h5 class="card-title bg-success text-white"><strong>Relatórios de Brindes</strong></h5>
-
-                          <p class="card-text text-justify">Baixe agora o relatório dos brindes concedidos. Ao clicar para baixar, a planilha fornecida contem todos os registres de brindes, desde o inicio da utilizaçao do sistema.<br>
-                           <br>  <strong>Planilha em formato CSV-Excel</strong></p>
-                          <a href="/clientes/download/" class="btn" title="Relatório de Brindes" style="width:100%;height:10%"><button type="button" class="btn btn-outline-success">Baixar</button></a>
-                      </div>
+            <div class="card text-center mt-4">
+                <div class="card-body">
+                    <h5 class="card-title bg-success text-white"><strong>Relatórios de Brindes</strong></h5>
+                    <p class="card-text text-justify">Baixe agora o relatório dos brindes concedidos. Ao clicar para baixar, a planilha fornecida contem todos os registres de brindes, desde o inicio da utilizaçao do sistema.<br><br><strong>Planilha em formato CSV-Excel</strong></p>
+                    <a href="/clientes/download/" class="btn" title="Relatório de Brindes" style="width:100%;height:10%"><button type="button" class="btn btn-outline-success">Baixar</button></a>
                 </div>
+            </div>
         </div>
 
         <div class="col-3">
-                <div class="card">
-                      <div class="card-body">
-                          <h5 class="card-title text-center bg-primary text-white"><strong>Cadastrar Usuários</strong></h5>
-
-                          <p class="card-text text-justify">Acessar a área de cadastros de usuários do sistema. Nessa área é possível cadastrar usuários com diferentes níveis de acesso.</p>
-                          <p class="text-start"><strong>Grupos de Usuários:</strong><br>
-                             &bull; Administradores;<br>
-                             &bull; Gerentes<br>
-                             &bull; Funcionários</p>
-                          <a href="/create2/" class="btn" title="Relatório de Brindes" style="width:100%;height:10%"><button type="button" class="btn btn-outline-primary">Cadastrar</button></a>
-                      </div>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title text-center bg-primary text-white"><strong>Cadastrar Usuários</strong></h5>
+                    <p class="card-text text-justify">Acessar a área de cadastros de usuários do sistema. Nessa área é possível cadastrar usuários com diferentes níveis de acesso.</p>
+                    <p class="text-start"><strong>Grupos de Usuários:</strong><br>
+                        &bull; Administradores;<br>
+                        &bull; Gerentes<br>
+                        &bull; Funcionários</p>
+                    <a href="/create2/" class="btn" title="Relatório de Brindes" style="width:100%;height:10%"><button type="button" class="btn btn-outline-primary">Cadastrar</button></a>
                 </div>
+            </div>
         </div>
 
-        <div class="col-3  me-4">
-                <div class="card">
-                      <div class="card-body text-center">
-                          <h5 class="card-title text-center bg-dark text-white"><strong>Cadastro de Brindes</strong></h5>
-                          <p class="card-text text-justify"> Acessar área de cadastro de brindes. Nela é necessário informar
-                              <strong>nome, sala e brinde</strong> que deseja conceder. Para gerar o voucher bastas clicar no botão <strong>Imprimir</strong>.</p>
-                          <a href="/index/" class="btn " title="Cadastro de Brindes"><button type="button" class="btn btn-outline-dark">Brindes</button></a>
-                      </div>
+        <div class="col-3 me-4">
+            <div class="card mt-4">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-center bg-dark text-white"><strong>Cadastro de Brindes</strong></h5>
+                    <p class="card-text text-justify"> Acessar área de cadastro de brindes. Nela é necessário informar<strong>nome, sala e brinde</strong> que deseja conceder. Para gerar o voucher bastas clicar no botão <strong>Imprimir</strong>.</p>
+                    <a href="/index/" class="btn " title="Cadastro de Brindes"><button type="button" class="btn btn-outline-dark">Brindes</button></a>
                 </div>
+            </div>
         </div>
-      </div>
-
     </div>
+</div>
+
+<div class="col-12 mt-4">
+    <div class="text-center">
+        <a href="/" class="btn" title="Sair do sistema" style="width:10%;height:10%">
+            <button type="button" class="btn btn-outline-danger">
+                Sair
+            </button>
+        </a>
+    </div>
+</div>
 
 
-
-
-        <div class="col-12 mt-4">
-        <div class="text-center">
-            <a href="/" class="btn" title="Sair do sistema" style="width:10%;height:10%">
-                <button type="button" class="btn btn-outline-danger">
-                    Sair
-                </button>
-            </a>
-        </div>
-        </div>
-
-
+        <style>
+            .custom-row {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              align-items: center;
+            }
+          </style>
 
 {% endblock %}

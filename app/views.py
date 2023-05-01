@@ -151,9 +151,6 @@ def store(request):
     return render(request, 'create2.html', data)
 
 
-# def painel(request):
-#    return render(request, 'home.html')
-
 
 def dologin(request):
     data = {}
