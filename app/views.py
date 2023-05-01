@@ -4,14 +4,13 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.db import transaction
 from app.forms import ClienteForm
-
+from django.contrib import messages
 from django.http import HttpResponse
 from openpyxl import Workbook
 from .models import Cliente
+from .forms import ClienteForm
 
 
-# def home(request):
-#    return render(request, 'home.html')
 def home(request):
     return render(request, 'home.html')
 
@@ -55,14 +54,6 @@ def form(request):
     data = {'form': ClienteForm()}
     return render(request, 'form.html', data)
 
-
-# def create(request):
-#    form = ClienteForm(request.POST or None)
-#    if form.is_valid():
-#        form.save()
-#        return redirect('home')
-# noinspection PyShadowingNames
-
 # def create(request):
 #    data = {}
 #    form = ClienteForm(request.POST or None)
@@ -79,15 +70,17 @@ def form(request):
 
 def create(request):
     if request.method == 'POST':
-            Nome = request.POST['Nome']
-            Sala = request.POST['Sala']
-            Brinde = request.POST['Brinde']
-            quantidade = int(request.POST['quantidade'])
-            for i in range(quantidade):
-                    cliente = Cliente(Nome=Nome, Sala=Sala, Brinde=Brinde)
-                    cliente.save()
+        Nome = request.POST['Nome']
+        Sala = request.POST['Sala']
+        Brinde = request.POST['Brinde']
+        quantidade = int(request.POST['quantidade'])
+        for i in range(quantidade):
+            if Nome and Sala and Brinde:  # verifica se Nome, Sala e Brinde não são nulos
+                cliente = Cliente(Nome=Nome, Sala=Sala, Brinde=Brinde)
+                cliente.save()
+            else:
+                return render(request, 'form.html', {'error': 'Por favor, preencha todos os campos.'})
     return render(request, 'form.html')
-
 
 
 def view(request, pk):
@@ -101,7 +94,6 @@ def edit(request, pk):
     return render(request, 'form.html', data)
 
 
-# noinspection PyShadowingNames
 def update(request, pk):
     data = {'db': Cliente.objects.get(pk=pk)}
     form = ClienteForm(request.POST or None, instance=data['db'])
@@ -161,20 +153,6 @@ def dologin(request):
         return render(request, 'home.html', data)
 
 
-# def dashboard(request):
-#    return render(request, 'home.html')
-
-
-# noinspection PyShadowingNames
-# def add_brinde(request):
-#    if request.method == 'POST':
-#        brinde = request.POST.get('brinde')
-#        if brinde:
-#            # Salva o novo brinde no banco de dados
-#            novo_brinde = brinde.objects.create(nome=brinde)
-#            return JsonResponse({'id': novo_brinde.id, 'nome': novo_brinde.nome})
-#    return JsonResponse({'error': 'Dados inválidos'})
-
 
 def download_planilha(request):
     # Cria uma nova planilha
@@ -184,7 +162,7 @@ def download_planilha(request):
     ws = wb.active
 
     # Adiciona os cabeçalhos da tabela
-    ws.append(['Nome', 'Brinde', 'Sala', 'Tempo'])
+    ws.append(['id','Nome', 'Brinde', 'Sala', 'Tempo'])
 
     # Adiciona os dados dos clientes à planilha
     for cliente in Cliente.objects.all():
