@@ -180,7 +180,7 @@ def download_planilha(request):
 
     # Adiciona os dados dos clientes à planilha
     for cliente in Cliente.objects.all():
-        ws.append([cliente.Nome, cliente.Brinde, cliente.Sala, cliente.Tempo])
+        ws.append([cliente.id, cliente.Nome, cliente.Brinde, cliente.Sala, cliente.Tempo])
 
     # Cria a resposta HTTP com o arquivo da planilha
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
