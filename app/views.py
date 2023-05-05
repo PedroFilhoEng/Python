@@ -7,7 +7,8 @@ from django.http import HttpResponse, JsonResponse
 from openpyxl import Workbook
 from .models import Cliente
 from .forms import ClienteForm
-
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def home(request):
     return render(request, 'home.html')
@@ -186,3 +187,54 @@ def download_planilha(request):
 
     # Retorna a resposta para download
     return response
+
+
+def dashboard(request):
+    # Obtém todos os clientes
+    clientes = Cliente.objects.all()
+
+    # Converte os dados dos clientes para um DataFrame do Pandas
+    df = pd.DataFrame(list(clientes.values()))
+
+    # Converte a coluna Tempo para datetime e cria uma nova coluna chamada 'Data'
+    df['Data'] = pd.to_datetime(df['Tempo']).dt.date
+
+    # Filtra as linhas com valores não numéricos na coluna 'Brinde' e converte a coluna para numérica
+    df['Brinde'] = pd.to_numeric(df['Brinde'], errors='coerce')
+    df = df.dropna(subset=['Brinde'])
+
+    # Calcula o número de brindes por data
+    brindes_por_data = df.groupby('Data')['Brinde'].sum().reset_index()
+
+    # Calcula o número de brindes por sala e obtém os 3 brindes mais dados por sala
+    brindes_por_sala = df.groupby('Sala')['Brinde'].sum().reset_index()
+    brindes_por_sala_top3 = brindes_por_sala.nlargest(3, 'Brinde')
+
+    # Calcula o número total de brindes
+    brindes_total = df['Brinde'].sum()
+
+    # Plota o gráfico de brindes por data
+    plt.figure(figsize=(12,6))
+    plt.plot(brindes_por_data['Data'], brindes_por_data['Brinde'], '-o')
+    plt.title('Brindes por Data')
+    plt.xlabel('Data')
+    plt.ylabel('Brindes')
+    plt.xticks(rotation=45)
+    brindes_por_data_fig = plt.gcf()
+
+    # Plota o gráfico de brindes por sala
+    plt.figure(figsize=(12,6))
+    plt.bar(brindes_por_sala_top3['Sala'], brindes_por_sala_top3['Brinde'])
+    plt.title('Brindes por Sala')
+    plt.xlabel('Sala')
+    plt.ylabel('Brindes')
+    brindes_por_sala_fig = plt.gcf()
+
+    return render(request, 'dashboard.html', {
+        'brindes_por_data': brindes_por_data.to_html(index=False),
+        'brindes_por_sala': brindes_por_sala.to_html(index=False),
+        'brindes_total': brindes_total,
+        'brindes_por_sala_top3': brindes_por_sala_top3.to_html(index=False),
+        'brindes_por_data_fig': brindes_por_data_fig,
+        'brindes_por_sala_fig': brindes_por_sala_fig,
+        })

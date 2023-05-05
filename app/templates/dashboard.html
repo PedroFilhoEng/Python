@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Brindes</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.plot.ly/plotly-2.0.0.min.css">
+
+  </head>
+  <body>
+    <h1>Dashboard de Brindes</h1>
+    <h2>Brindes por Data</h2>
+    <div>{{ brindes_por_data }}</div>
+
+    <h2>Brindes por Sala</h2>
+    <div>{{ brindes_por_sala }}</div>
+
+    <h2>Brindes Total</h2>
+    <div>{{ brindes_total }}</div>
+
+    <h2>Os 3 Brindes Mais Dados por Sala</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Sala</th>
+          <th>Brinde</th>
+          <th>Número de Brindes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sala, brinde, num_brindes in brindes_mais_dados %}
+          <tr>
+            <td>{{ sala }}</td>
+            <td>{{ brinde }}</td>
+            <td>{{ num_brindes }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Gráficos</h2>
+    <h3>Brindes por Data</h3>
+    <div id="plot_brindes_por_data"></div>
+    <script>
+      var data = [{
+        x: {{ brindes_por_data.index|json_script }},
+        y: {{ brindes_por_data.Numero_de_Brindes|json_script }},
+        type: 'bar'
+      }];
+      Plotly.newPlot('plot_brindes_por_data', data);
+    </script>
+
+    <h3>Brindes por Sala</h3>
+    <div id="plot_brindes_por_sala"></div>
+    <script>
+      var data = [{
+        x: {{ brindes_por_sala.Sala|json_script }},
+        y: {{ brindes_por_sala.Numero_de_Brindes|json_script }},
+        type: 'bar'
+      }];
+      Plotly.newPlot('plot_brindes_por_sala', data);
+    </script>
+
+    <h3>Brindes Total</h3>
+    <div id="plot_brindes_total"></div>
+    <script>
+      var data = [{
+        x: ['Total'],
+        y: [{{ brindes_total }}],
+        type: 'bar'
+      }];
+      Plotly.newPlot('plot_brindes_total', data);
+    </script>
+  </body>
+</html>

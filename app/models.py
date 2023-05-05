@@ -73,6 +73,7 @@ class Cliente(models.Model):
         ('BG - WINE GARDEN', 'BG - WINE GARDEN'),
         ('BG - COMPLEXO DA ESTAÇÃO', 'BG - COMPLEXO DA ESTAÇÃO'),
         ('GM - U DRIVE', 'GM - U DRIVE'),
+        ('GM - DOCE AMELIE', 'GM - DOCE AMELIE'),
 
 
 ]
@@ -268,6 +269,8 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - U DRIVE':
             return '# ESSE VOUCHER DA DIREITO A UM DRIVE E UMA CARONA NA U DRIVE - EXOTIC CARS.\n\n \
                     # VALOR DO VOUCHER R$: 120,00 - MODELO DO CARRO: CAMARO SS V8 CONVERSÍVEL.\n '
+        elif self.Brinde == 'GM - DOCE AMELIE':
+            return '# ESSE VOUCHER DA DIREITO A R$:35,00 DE CONSUMAÇÃO EM QUALQUER PRODUTO DO CARDÁPIO.'
 
 
 
@@ -419,7 +422,9 @@ class Cliente(models.Model):
                     ## PARA TROCAR POR VEÍCULO DE IGUAL OU MENOR VALOR SERÁ COBRADO O VALOR DE R$ 150,00.##\n \n \
                     ## OU CONSIDERAR UM CRÉDITO DE R$ 200,00 PARA OUTROS VEÍCULOS.##\n \n \
                     ## FAVOR AGENDAR SEU PASSEIO PELO FONE (54) 9 9198 5749.##\n \n \
-                    **ENDEREÇO: RUA SILVEIRA MARTINS 50. BAIRRO CARNIEL – GRAMADO**\n'
+                    **ENDEREÇO: RUA SILVEIRA MARTINS 50. BAIRRO CARNIEL, GRAMADO**\n'
+        elif self.Brinde == 'GM - DOCE AMELIE':
+            return '#ABERTO DIARIAMENTE, DAS 10H AS 20:20H#\n\n#NÃO HAVERÁ TROCO, CASO O CONSUMO SEJA MENOR QUE O VALOR DO VOUCHER#\n\n# ESSE VOUCHER NÃO INCLUI TAXAS ADICIONAIS, COMO 10%.\n\n# VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO DO VOUCHER.#\n\n# É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO. #'
 
     descricao_do_brinde1 = property(descricao_brinde1)
     descricao_do_brinde2 = property(descricao_brinde2)

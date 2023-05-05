@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 
 from app.views import home, form, create, view, edit, update, delete,\
-    brinde, create2, store, download_planilha, admins, index, dologin
+    brinde, create2, store, download_planilha, admins, index, dologin, dashboard
 
 
 urlpatterns = [
@@ -21,4 +21,5 @@ urlpatterns = [
     path('admins/', admins),
     path('dologin/', dologin),
     path('index/', index, name='index'),
+    path('dashboard/', dashboard, name='dashboard'),
 ]
