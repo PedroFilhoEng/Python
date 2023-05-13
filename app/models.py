@@ -74,6 +74,7 @@ class Cliente(models.Model):
         ('BG - COMPLEXO DA ESTAÇÃO', 'BG - COMPLEXO DA ESTAÇÃO'),
         ('GM - U DRIVE', 'GM - U DRIVE'),
         ('GM - DOCE AMELIE', 'GM - DOCE AMELIE'),
+        ('BG - VINÍCOLA LIDIO CARRARO', 'BG - VINÍCOLA LIDIO CARRARO'),
 
 
 ]
@@ -271,8 +272,15 @@ class Cliente(models.Model):
                     # VALOR DO VOUCHER R$: 120,00 - MODELO DO CARRO: CAMARO SS V8 CONVERSÍVEL.\n '
         elif self.Brinde == 'GM - DOCE AMELIE':
             return '# ESSE VOUCHER DA DIREITO A R$:35,00 DE CONSUMAÇÃO EM QUALQUER PRODUTO DO CARDÁPIO.'
-
-
+        elif self.Brinde == 'BG - VINÍCOLA LIDIO CARRARO':
+            return '# DEGUSTAÇÃO DE BALCÃO DE 4 RÓTULOS NA VINÍCOLA LIDIO CARRARO.\n\n \
+                    # VALOR UNITÁRIO DO VOUCHER DE R$ 55,00.\n\n \
+                    # HORÁRIO DE FUNCIONAMENTO DAS 10:00 AS 17:00 HORAS, VÁLIDO  TODOS OS DIAS DA SEMANA.\n\n \
+                    # ENDEREÇO DO LOCAL: VIA DOS PARRERAIS, S/N\n \
+                    SANTA LÚCIA - VALE DOS VINHEDOS \n \
+                    BENTO GONÇALVES – RS – BRASIL\n \
+                    CEP: 95711-000. \n\n \
+                    # TELEFONE: (54) 3698-3603'
 
 
     def descricao_brinde2(self):
@@ -425,6 +433,10 @@ class Cliente(models.Model):
                     **ENDEREÇO: RUA SILVEIRA MARTINS 50. BAIRRO CARNIEL, GRAMADO**\n'
         elif self.Brinde == 'GM - DOCE AMELIE':
             return '#ABERTO DIARIAMENTE, DAS 10H AS 20:20H#\n\n#NÃO HAVERÁ TROCO, CASO O CONSUMO SEJA MENOR QUE O VALOR DO VOUCHER#\n\n# ESSE VOUCHER NÃO INCLUI TAXAS ADICIONAIS, COMO 10%.\n\n# VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO DO VOUCHER.#\n\n# É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO. #'
+        elif self.Brinde == 'BG - VINÍCOLA LIDIO CARRARO':
+            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+                    ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
+                    ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
 
     descricao_do_brinde1 = property(descricao_brinde1)
     descricao_do_brinde2 = property(descricao_brinde2)

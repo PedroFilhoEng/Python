@@ -163,7 +163,6 @@ def dologin(request):
         return render(request, 'home.html', data)
 
 
-
 def download_planilha(request):
     # Cria uma nova planilha
     wb = Workbook()
