@@ -247,13 +247,15 @@ class Cliente(models.Model):
                             # AGENDAR SUA RESERVA\n\n \
                             # TEL: (54) 3698-6777'
         elif self.Brinde == 'BG - PIZZATO VINHA E VINHOS':
-            return '# DEGUSTAÇÃO DE BALÇÃO 4 ROTULOS DENTRO DA VINICOLA PIZZATO.\n\n \
+            return '# DEGUSTAÇÃO DE BALÇÃO 6 ROTULOS DENTRO DA VINICOLA PIZZATO.\n\n \
                     # VALOR UNITARIO DO VOUCHER DE R$ 45,00.\n\n \
                     # HORARIO DE FUNCIONAMENTO DAS 10:00 AS 17:00 HORAS VAIDO  TODOS OS DIAS DA SEMANA.\n\n \
                     # ENDEREÇO DO LOCAL: VIA DOS PARRERAIS, S/N\n \
                     --SANTA LUCIA – VALE DOS VINHEDOS\n \
                     -- BENTO GONÇALVES – RS – BRASIL\n \
-                    -- CEP: 95711-000'
+                    -- CEP: 95711-000\n\n \
+                    ## SOMENTO COM AGENDAMENTO##\n \
+                    # TELEFONE: (54) 99663-029803'
         elif self.Brinde == 'BG - PIZZA PLACE':
             return '# RODIZIO DE PIZZA OU CONSUMAÇÃO NO RESTAURANTE.\n\n \
                     # VALOR UNITARIO DO VOUCHER DE R$ 50,00.\n\n \
