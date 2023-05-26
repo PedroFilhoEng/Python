@@ -53,7 +53,7 @@ class Cliente(models.Model):
         ('GM - PISA DE UVA - VINÍCOLA JOLIMONT', 'GM - PISA DE UVA - VINÍCOLA JOLIMONT'),
         ('GM - SUPER CARROS', 'GM - SUPER CARROS'),
         ('GM - FOTO OFICIAL', 'GM - FOTO OFICIAL'),
-        ('GM - SEQUÊNCIA COMPLETO DE FUNDUE BELLA BRASA', 'GM - SEQUÊNCIA COMPLETO DE FUNDUE BELLA BRASA'),
+        ('GM - SEQUÊNCIA TRADICIONAL DE FUNDUE BELLA BRASA', 'GM - SEQUÊNCIA TRADICIONAL DE FUNDUE BELLA BRASA'),
         ('GM - NAMATÊ SHIVA SPA', 'GM - NAMATÊ SHIVA SPA'),
         ('GM - COMBUSTIVEL POSTO SIM', 'GM - COMBUSTIVEL POSTO SIM'),
         ('GM - NATIVITATEN', 'GM - NATIVITATEN'),
@@ -186,8 +186,8 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - FOTO OFICIAL':
             return '# A entrega deste voucher em qualquer uma das lojas oficias da Foto Oficial, você ganhará uma foto de presente.\n \
                     # As lojas estão localizadas ao lado da Fonte do amor eterno em Gramado, e próximo a Catedral de Canela.'
-        elif self.Brinde == 'GM - SEQUÊNCIA COMPLETO DE FUNDUE BELLA BRASA':
-            return 'Sequência de Fondue completa para uma pessoa.\n\n \
+        elif self.Brinde == 'GM - SEQUÊNCIA TRADICIONAL DE FUNDUE BELLA BRASA':
+            return 'Sequência de Fondue tradicional para uma pessoa.\n\n \
             Endereço: Rua Bela Vista, nº 55, Villa Suiça - Gramado, CEP 95.670-000'
         elif self.Brinde == 'GM - NAMATÊ SHIVA SPA':
             return 'Com 2 opções de combo de massagem sem custo para 1 pessoa, com duração aproximada de pelo menos 1h e 20 minutos...\n \
@@ -377,13 +377,14 @@ class Cliente(models.Model):
             return 'ENDEREÇO: AV. DAS HORTENSIAS, 4635 - ESTRADA GRAMADO'
         elif self.Brinde == 'GM - FOTO OFICIAL':
             return '# A 1º FOTO SERÁ DE PRESENTE E AS DEMAIS FOTOS DA SESSÃO PODERÃO SER ADQUIRIDAS.'
-        elif self.Brinde == 'GM - SEQUÊNCIA COMPLETO DE FUNDUE BELLA BRASA':
+        elif self.Brinde == 'GM - SEQUÊNCIA TRADICIONAL DE FUNDUE BELLA BRASA':
             return 'Horário de funcionamento\n \
                     De Quarta a Segunda das 18h30min as 23h (Terça feira FECHADO)\n \
                     Necessário chegar até 1h antes do fechamento do restaurante.\n \
                     Crianças até 4 anos não pagam e de 5 a 9 anos pagam meia direto no estabelecimento (NÃO ISENTO)\n \
                     A taxa de Serviço e Couvert artístico (opcional) será de responsabilidade do cliente (Não está incluso no Voucher)\n \
-                    Bebidas não inclusas'
+                    Bebidas não inclusas \n \
+                    Não é Válido para feriados e datas comemorativas'
         elif self.Brinde == 'GM - NAMATÊ SHIVA SPA':
             return ''
         elif self.Brinde == 'GM - COMBUSTIVEL POSTO SIM':
