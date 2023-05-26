@@ -79,6 +79,7 @@ class Cliente(models.Model):
         ('BG - VINHO PIZZATO - CABERNET SAUVIGNON', 'BG - VINHO PIZZATO - CABERNET SAUVIGNON'),
         ('BG - ESPUMANTE PIZZATO - BRANCO', 'BG - ESPUMANTE PIZZATO - BRANCO'),
         ('BG - ESPUMANTE PIZZATO - ROSE', 'BG - ESPUMANTE PIZZATO - ROSE'),
+        ('GM - FOTO ANTIGA', 'GM - FOTO ANTIGA'),
 
 
 ]
@@ -299,6 +300,19 @@ class Cliente(models.Model):
         elif self.Brinde == 'BG - ESPUMANTE PIZZATO - ROSE':
             return '# VOUCHER VÁLIDO PARA A TROCA DE UM ESPUMANTE PIZZATO ROSE \n\n \
                     # A TROCA É REALIZADA NA SALA DE VENDAS'
+        elif self.Brinde == 'GM - FOTO ANTIGA':
+            return '# 1 FOTO DIGITAL EM ALTA RESOLUÇÃO POR E-MAIL OU WHATSAPP \n\n \
+                    # REGULAMENTO: \n \
+                    -- VÁLIDO PARA ATÉ 5 PESSOAS POR SESSÃO FOTOGRÁFICA \n\n \
+                    # ENDEREÇOS: \n \
+                    -- ESTUDIO CANELA = AV. DON LUIZ GUANELLA, 357, SÃO JOSÉ, CANELA - RS. \n \
+                    ---TELEFONE: (54) 3878 - 3205 - WHATSAPP: (54) 99668 - 2414  \n \
+                    -- ESTUDIO GRAMADO = AV. DAS HORTÊNSIAS, 2040, LOJA 1, CENTRO, GRAMADO - RS. \n \
+                    ---TELEFONE: (54) 3699 - 0023 - WHATSAPP: (54) 99932 - 1560  \n\n \
+                    # FUNCIONAMENTO:\n \
+                    -- TODOS OS DIAS DE 10H ÀS 15H. \n\n \
+                    # LINK:\n\
+                    https://recordarfotos.com.br/cupom/laghetto'
 
     def descricao_brinde2(self):
         if self.Brinde == 'GM - RESTAURANTE LAGHETTO':
@@ -451,23 +465,27 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - DOCE AMELIE':
             return '#ABERTO DIARIAMENTE, DAS 10H AS 20:20H#\n\n#NÃO HAVERÁ TROCO, CASO O CONSUMO SEJA MENOR QUE O VALOR DO VOUCHER#\n\n# ESSE VOUCHER NÃO INCLUI TAXAS ADICIONAIS, COMO 10%.\n\n# VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO DO VOUCHER.#\n\n# É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO. #'
         elif self.Brinde == 'BG - VINÍCOLA LIDIO CARRARO':
-            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+            return '## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
                     ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
                     ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
         elif self.Brinde == 'BG - VINHO PIZZATO - MERLOT':
-            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+            return '## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
                     ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
                     ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
         elif self.Brinde == 'BG - VINHO PIZZATO - CABERNET SAUVIGNON':
-            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+            return '## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
                     ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
                     ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
         elif self.Brinde == 'BG - ESPUMANTE PIZZATO - BRANCO':
-            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+            return '## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
                     ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
                     ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
         elif self.Brinde == 'BG - ESPUMANTE PIZZATO - ROSE':
-            return '## VOUCHER NAO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+            return '## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+                    ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
+                    ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
+        elif self.Brinde == 'GM - FOTO ANTIGA':
+            return '## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
                     ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
                     ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
 
