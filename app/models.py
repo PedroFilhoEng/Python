@@ -80,6 +80,7 @@ class Cliente(models.Model):
         ('BG - ESPUMANTE PIZZATO - BRANCO', 'BG - ESPUMANTE PIZZATO - BRANCO'),
         ('BG - ESPUMANTE PIZZATO - ROSE', 'BG - ESPUMANTE PIZZATO - ROSE'),
         ('GM - FOTO ANTIGA', 'GM - FOTO ANTIGA'),
+        ('GM - RESTAURANTE WERDUM PREMIUM MEATS', 'GM - RESTAURANTE WERDUM PREMIUM MEATS'),
 
 
 ]
@@ -313,6 +314,9 @@ class Cliente(models.Model):
                     -- TODOS OS DIAS DE 10H ÀS 15H. \n\n \
                     # LINK:\n\
                     https://recordarfotos.com.br/cupom/laghetto'
+        elif self.Brinde == 'GM - RESTAURANTE WERDUM PREMIUM MEATS':
+            return '# VOUCHER VÁLIDO PARA O CONSUMO DE R$: 150,00 NO RESTAURANTE, EXCLUSIVAMENTE PARA A PARTE DA TARDE, DAS 12H AS 17H. \n\n \
+                    # NÃO PODE SER UTILIZADO PARA JANTAR.'
 
     def descricao_brinde2(self):
         if self.Brinde == 'GM - RESTAURANTE LAGHETTO':
@@ -487,6 +491,12 @@ class Cliente(models.Model):
                     ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
         elif self.Brinde == 'GM - FOTO ANTIGA':
             return '## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+                    ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
+                    ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
+        elif self.Brinde == 'GM - RESTAURANTE WERDUM PREMIUM MEATS':
+            return '## O VALOR NÃO PODE SER USADO PARA CONSUMO DE BEBIDAS, APENAS PARA ALIMENTAÇÃO. ## \n \n \
+                    ## VOUCHER NÃO COBRE TAXA DE SERVIÇO, A MESMA DEVE SER PAGA A PARTE. ##\n \n \
+                    ## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ##\n \n \
                     ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
                     ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
 
