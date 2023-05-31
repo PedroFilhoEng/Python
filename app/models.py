@@ -282,7 +282,7 @@ class Cliente(models.Model):
             return '# ESSE VOUCHER DA DIREITO A R$:35,00 DE CONSUMAÇÃO EM QUALQUER PRODUTO DO CARDÁPIO.'
         elif self.Brinde == 'BG - VINÍCOLA LIDIO CARRARO':
             return '# DEGUSTAÇÃO DE BALCÃO DE 5 RÓTULOS NA VINÍCOLA LIDIO CARRARO.\n\n \
-                    # VALOR UNITÁRIO DO VOUCHER DE R$ 55,00.\n\n \
+                    # VALOR UNITÁRIO DO VOUCHER DE R$ 60,00.\n\n \
                     # HORÁRIO DE FUNCIONAMENTO DAS 10:00 AS 17:00 HORAS, VÁLIDO  TODOS OS DIAS DA SEMANA.\n\n \
                     # ENDEREÇO DO LOCAL: VIA DOS PARRERAIS, S/N\n \
                     SANTA LÚCIA - VALE DOS VINHEDOS \n \
