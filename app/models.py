@@ -281,14 +281,15 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - DOCE AMELIE':
             return '# ESSE VOUCHER DA DIREITO A R$:35,00 DE CONSUMAÇÃO EM QUALQUER PRODUTO DO CARDÁPIO.'
         elif self.Brinde == 'BG - VINÍCOLA LIDIO CARRARO':
-            return '# DEGUSTAÇÃO DE BALCÃO DE 4 RÓTULOS NA VINÍCOLA LIDIO CARRARO.\n\n \
+            return '# DEGUSTAÇÃO DE BALCÃO DE 5 RÓTULOS NA VINÍCOLA LIDIO CARRARO.\n\n \
                     # VALOR UNITÁRIO DO VOUCHER DE R$ 55,00.\n\n \
                     # HORÁRIO DE FUNCIONAMENTO DAS 10:00 AS 17:00 HORAS, VÁLIDO  TODOS OS DIAS DA SEMANA.\n\n \
                     # ENDEREÇO DO LOCAL: VIA DOS PARRERAIS, S/N\n \
                     SANTA LÚCIA - VALE DOS VINHEDOS \n \
                     BENTO GONÇALVES – RS – BRASIL\n \
                     CEP: 95711-000. \n\n \
-                    # TELEFONE: (54) 3698-3603'
+                    # É NECESSÁRIO AGENDAR A VISITA. \n \
+                    # TELEFONE: (54) 99708-0733'
         elif self.Brinde == 'BG - VINHO PIZZATO - MERLOT':
             return '# VOUCHER VÁLIDO PARA A TROCA DE UM VINHO PIZZATO MERLOT \n\n \
                     # A TROCA É REALIZADA NA SALA DE VENDAS'
@@ -470,7 +471,9 @@ class Cliente(models.Model):
         elif self.Brinde == 'GM - DOCE AMELIE':
             return '#ABERTO DIARIAMENTE, DAS 10H AS 20:20H#\n\n#NÃO HAVERÁ TROCO, CASO O CONSUMO SEJA MENOR QUE O VALOR DO VOUCHER#\n\n# ESSE VOUCHER NÃO INCLUI TAXAS ADICIONAIS, COMO 10%.\n\n# VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO DO VOUCHER.#\n\n# É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO. #'
         elif self.Brinde == 'BG - VINÍCOLA LIDIO CARRARO':
-            return '## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
+            return '## EXPERIÊNCIA COM DEGUSTAÇÃO ORIENTADA DE 5 RÓTULOS DAS LINHAS PREMIUM. ## \n \n \
+                    ## EXPERIÊNCIA CONTEMPLA DEGUSTAÇÃO ORIENTADA, COM ATENDIMENTO PERSONALIZADO E EXPLANAÇÃO DA HISTÓRIA E FILOSOFIA DE TRABALHO DA LIDIO CARRARO. ## \n \n \
+                    ## VOUCHER NÃO PODE SER COMERCIALIZADO, USO EXCLUSIVO DOS CONVIDADOS. ## \n \n \
                     ## VOUCHER VÁLIDO POR 30 DIAS APÓS A EMISSÃO. #\n \n \
                     ** É PROIBIDA A TROCA DESTE VOUCHER POR QUALQUER OUTRO PRODUTO, EM CASO NÃO UTILIZAÇÃO NÃO SERÁ POSSÍVEL A TROCA POR OUTRO VOUCHER. **'
         elif self.Brinde == 'BG - VINHO PIZZATO - MERLOT':
